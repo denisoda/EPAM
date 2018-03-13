@@ -11,3 +11,5 @@ f:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Test\obj\Debug\ne
 f:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Test\obj\Debug\netcoreapp2.0\Test.AssemblyInfo.cs
 f:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Test\obj\Debug\netcoreapp2.0\Test.dll
 f:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Test\obj\Debug\netcoreapp2.0\Test.pdb
+f:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Test\bin\Debug\netcoreapp2.0\Solution.dll
+f:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Test\bin\Debug\netcoreapp2.0\Solution.pdb
