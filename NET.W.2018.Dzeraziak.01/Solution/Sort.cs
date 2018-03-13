@@ -6,7 +6,12 @@ namespace Solution.Sorts
     {
         public static void QuickSort()
         {
-            
+                
+        }
+
+        public static void MergeSort()
+        {
+
         }
     }    
 }
