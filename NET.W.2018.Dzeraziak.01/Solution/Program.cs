@@ -6,7 +6,7 @@ namespace Solution
     {
         static void Main(string[] args)
         {
-
+            
         }
     }
 }

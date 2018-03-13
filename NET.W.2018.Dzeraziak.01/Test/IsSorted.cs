@@ -12,8 +12,8 @@ namespace Test
             var arrGoal = new int[]{1, 2, 3, 4, 5, 6, 7};
             var arrInput = new int[]{2, 1, 3, 5, 6, 7, 4};
 
-            Array.Sort(arrInput);
-            
+            Sort.Quicksort(arrInput, 0, arrInput.Length - 1);
+
             Assert.Equal(arrGoal, arrInput);
         }
     }

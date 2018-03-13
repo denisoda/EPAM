@@ -1,0 +1,10 @@
+F:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Solution\bin\Debug\netcoreapp2.0\Solution.deps.json
+F:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Solution\bin\Debug\netcoreapp2.0\Solution.runtimeconfig.json
+F:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Solution\bin\Debug\netcoreapp2.0\Solution.runtimeconfig.dev.json
+F:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Solution\bin\Debug\netcoreapp2.0\Solution.dll
+F:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Solution\bin\Debug\netcoreapp2.0\Solution.pdb
+F:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Solution\obj\Debug\netcoreapp2.0\Solution.csproj.CoreCompileInputs.cache
+F:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Solution\obj\Debug\netcoreapp2.0\Solution.AssemblyInfoInputs.cache
+F:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Solution\obj\Debug\netcoreapp2.0\Solution.AssemblyInfo.cs
+F:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Solution\obj\Debug\netcoreapp2.0\Solution.dll
+F:\ilyab\Documents\Projects\EPAMCourse\NET.W.2018.Dzeraziak.01\Solution\obj\Debug\netcoreapp2.0\Solution.pdb
