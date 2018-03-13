@@ -1,4 +1,4 @@
 #Build results
-.vscode
-.vs
+.vscode/*
+.vs/*
 
