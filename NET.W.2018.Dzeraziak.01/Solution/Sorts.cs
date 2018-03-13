@@ -4,46 +4,51 @@ namespace Solution.Sorts
 {
     public static class Sorts
     {
+        #region QickSort
+        
+        ///<summary>QuickSort implementation</summary>  
          public  static void QuickSort(int[] array,int left,int right)
         {
-            int i = left, j = right;
+            int k = left, i = right;
             int pivot = array[left + (right - left >> 1)];
 
-            while (i <= j)
+            while (k <= i)
             {
-                while (array[i].CompareTo(pivot) < 0)
+                while (array[k].CompareTo(pivot) < 0)
                 {
-                    i++;
+                    k++;
                 }
 
-                while (array[j].CompareTo(pivot) > 0)
+                while (array[i].CompareTo(pivot) > 0)
                 {
-                    j--;
+                    i--;
                 }
 
-                if (i <= j)
+                if (k <= i)
                 {
-                    // Swap
-                    int tmp = array[i];
-                    array[i] = array[j];
-                    array[j] = tmp;
+                    // Swaping
+                    int tmp = array[k];
+                    array[k] = array[i];
+                    array[i] = tmp;
 
-                    i++;
-                    j--;
+                    k++;
+                    i--;
                 }
             }
 
             // Recursive calls
-            if (left < j)
+            if (left < i)
             {
-                QuickSort(array, left, j);
+                QuickSort(array, left, i);
             }
 
-            if (i < right)
+            if (k < right)
             {
-                QuickSort(array, i, right);
+                QuickSort(array, k, right);
             }
         }
+
+        #endregion
 
         public static void MergeSort()
         {
