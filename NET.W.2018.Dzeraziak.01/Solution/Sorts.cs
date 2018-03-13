@@ -50,6 +50,7 @@ namespace Solution.Sorts
 
         #endregion
 
+    #region MergeSort
     ///<summary>Custom merge sort implementation</summary>
     public static void MergeSort(int[] input, int low, int high)
     {
@@ -116,5 +117,6 @@ namespace Solution.Sorts
         }
 
     }
+    #endregion
     }    
 }
