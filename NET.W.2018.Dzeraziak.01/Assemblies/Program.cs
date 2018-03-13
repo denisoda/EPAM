@@ -6,7 +6,7 @@ namespace Assemblies
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("The app has started");
         }
     }
 }
