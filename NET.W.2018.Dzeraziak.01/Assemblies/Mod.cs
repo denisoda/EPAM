@@ -1,12 +1,9 @@
 using System;
 
-namespace Assemblies
+class Mod
 {
-    public class module 
+    public void DoIt()
     {
-        public static void Mod()
-        {
-            System.Console.WriteLine("Hello wolld from module");
-        }
+        System.Console.WriteLine("Hello world from module");
     }
 }
