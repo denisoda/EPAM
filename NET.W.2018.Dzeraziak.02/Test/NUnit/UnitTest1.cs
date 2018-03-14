@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace NUnit
+namespace Bit.Test
 {
     public class UnitTest1
     {
