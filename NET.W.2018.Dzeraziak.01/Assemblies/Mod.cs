@@ -1,6 +1,6 @@
 using System;
 
-class Mod
+public class Module
 {
     public void DoIt()
     {
