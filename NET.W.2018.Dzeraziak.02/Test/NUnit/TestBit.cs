@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace Solution.Bit.Test
+namespace Solution.Bit.NUnit
 {
     public class TestBit
     {
