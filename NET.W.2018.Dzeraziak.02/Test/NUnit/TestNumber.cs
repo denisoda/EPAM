@@ -17,11 +17,9 @@ namespace Solution.Number.NUnit
         [TestCase(3456432, ExpectedResult = 3462345)]
         [TestCase(10, ExpectedResult = -1)]
         [TestCase(20, ExpectedResult = -1)]
-        public void IsReturnCorrect(int value)
+        public int IsReturnCorrect(int value)
         {
-            Number.FindNextBiggerNumber(value);
-
-            Assert.Equal(value, ExpectedResult);
+            return Number.FindNextBiggerNumber(value);
         }
     }
 }
