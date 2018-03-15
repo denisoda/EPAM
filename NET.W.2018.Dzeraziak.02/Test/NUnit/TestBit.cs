@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Solution.Bit.Test
 {
-    public class UnitTest
+    public class TestBit
     {
         [Fact]
         public void Test()

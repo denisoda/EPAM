@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Bit.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class TestBit
     {
         [TestMethod]
         public void TestMethod1()
