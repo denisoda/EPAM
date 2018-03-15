@@ -14,7 +14,7 @@ namespace Solution.Number
         /// <returns>Filtered an int</returns>
         public static int FindNextBiggerNumber(int Number)
         {
-
+            return Number;
         }
 
         /// <summary>
@@ -31,9 +31,9 @@ namespace Solution.Number
         /// </summary>
         /// <param name="number"></param>
         /// <returns>powered an int</returns>
-        public static int FindNthRoot(int number)
+        public static int FindNthRoot(double number, int degree, double precision)
         {
-            return number;
+            return degree;
         }
     }
 }

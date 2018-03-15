@@ -14,7 +14,7 @@ namespace Solution.Bit
         /// <param name="j"></param>
         public static void InsertNumber(int numberSource, int numberln, int i, int j)
         {
-
+            
         }
     }
 }
