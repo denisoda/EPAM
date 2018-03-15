@@ -1,8 +1,8 @@
 using System;
 
-class Mod
+public static class Module
 {
-    public void DoIt()
+    public static void DoIt()
     {
         System.Console.WriteLine("Hello world from module");
     }
