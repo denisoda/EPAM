@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Solution.Number.Test
 {
-   public class Tests
+   public class NextBiggerNubmer
    {
        [Test]
        [TestCase(12, ExpectedResult = 21)]
