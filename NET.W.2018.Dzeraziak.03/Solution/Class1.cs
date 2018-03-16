@@ -2,8 +2,11 @@
 
 namespace Solution
 {
-    public class Class1
+    public class Number
     {
-        public static int a (int a) => 5;
+        public static int FindGCD(int Number)
+        {
+            return 0;
+        }
     }
 }
