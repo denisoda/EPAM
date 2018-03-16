@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Solution.Number
 {
@@ -10,21 +11,21 @@ namespace Solution.Number
         /// <summary>
         /// Finds the bigger closest number from the input
         /// </summary>
-        /// <param name="Number"></param>
+        /// <param name="number"></param>
         /// <returns>Filtered an int</returns>
-        public static int FindNextBiggerNumber(int Number)
+        public static int FindNextBiggerNumber(int number)
         {
-             if (Number < 0)
+             if (number < 0)
             {
-                throw new ArgumentException($"{nameof(Number)} should be possitive num");
+                throw new ArgumentException($"{nameof(number)} should be possitive num");
             }
 
-            if (Number < 11)
+            if (number < 11)
             {
                 return -1;
             }
 
-            string numberStr = Convert.ToString(Number);
+            string numberStr = Convert.ToString(number);
             int[] arrDigits = new int[numberStr.Length];
 
             for (int si = 0; si < numberStr.Length; si++)
@@ -32,23 +33,21 @@ namespace Solution.Number
                 arrDigits[si] = int.Parse(numberStr[si].ToString());
             }
 
-            bool hasFound = false;
-            int i = 0;
-            int indexStartPoint = arrDigits.Length - 1;
-            int indexFindNumber = 0;
+            var hasFound = false;
+            var i = 0;
+            var indexStartPoint = arrDigits.Length - 1;
+            var indexFindNumber = 0;
             while (!hasFound && i < arrDigits.Length - 1)
             {
                 for (int k = indexStartPoint; k >= indexStartPoint - i; k--)
                 {
-                    if (arrDigits[k]  > arrDigits[indexStartPoint - i - 1])
-                    {
-                        int temp = arrDigits[k];
-                        arrDigits[k] = arrDigits[indexStartPoint - i - 1];
-                        arrDigits[indexStartPoint - i - 1] = temp;
-                        indexFindNumber = indexStartPoint - i;
-                        hasFound = true;
-                        break;
-                    }
+                    if (arrDigits[k] <= arrDigits[indexStartPoint - i - 1]) continue;
+                    int temp = arrDigits[k];
+                    arrDigits[k] = arrDigits[indexStartPoint - i - 1];
+                    arrDigits[indexStartPoint - i - 1] = temp;
+                    indexFindNumber = indexStartPoint - i;
+                    hasFound = true;
+                    break;
                 }
 
                 i++;
@@ -72,9 +71,10 @@ namespace Solution.Number
         /// <summary>
         /// Filters input and  which consists this number
         /// </summary>
-        /// <param name="Digits"></param>
+        /// <param name="list"></param>
+        /// <param name="digit"></param>
         /// <returns>an array of filtered nums</returns>
-          public static List<int> FilterDigit(IEnumerable<int> list, int digit)
+        public static List<int> FilterDigit(IEnumerable<int> list, int digit)
         {
             if (list == null)
             {
@@ -100,10 +100,13 @@ namespace Solution.Number
 
             return result;
         }
+
         /// <summary>
         /// Finds a power of inputed number wiht Newton's method
         /// </summary>
         /// <param name="number"></param>
+        /// <param name="degree"></param>
+        /// <param name="precision"></param>
         /// <returns>powered an int</returns>
         public static int FindNthRoot(double number, int degree, double precision)
         {
