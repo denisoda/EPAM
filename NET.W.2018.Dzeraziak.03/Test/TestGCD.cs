@@ -8,7 +8,7 @@ namespace Solution.Tests
         [Test]
         // [TestCase(1, ExpectedResult = 5)]
         // [TestCase(1, ExpectedResult = 6)]
-        public int IsRetunGCD(int expect)
+        public int IsRetunCorrectGCD(int expect)
         {
             return Number.FindGCD(expect);
         }
