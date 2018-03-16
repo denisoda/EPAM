@@ -10,7 +10,7 @@ namespace Solution.Tests
         // [TestCase(1, ExpectedResult = 6)]
         public int IsRetunCorrectGCD(int expect)
         {
-            return Number.FindGCD(expect);
+            return GCD.FindEvclidGCD(expect);
         }
     }
 }
