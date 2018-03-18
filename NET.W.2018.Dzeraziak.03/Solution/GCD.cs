@@ -1,5 +1,5 @@
 ﻿using System;
-using Solution.Extencsions;
+using Solution.Extensions;
 
 namespace Solution
 {
