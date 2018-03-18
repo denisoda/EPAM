@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-
+using Solution.Number;
 
 namespace Solution.Number.Test
 {
@@ -22,14 +22,14 @@ namespace Solution.Number.Test
        }
    }
 
-    public class FilterDigit
-    {
-            IEnumerable<int> source = new List<int> { 1, 2, 3, 4, 5, 6, 7, 68, 69, 70, 15, 17 };
-            int digit = 7;
-            IEnumerable<int> expected = new List<int> { 7, 70, 17 };
+//     public class FilterDigit
+//     {
+//             IEnumerable<int> source = new List<int> { 1, 2, 3, 4, 5, 6, 7, 68, 69, 70, 15, 17 };
+//             int digit = 7;
+//             IEnumerable<int> expected = new List<int> { 7, 70, 17 };
 
-            IEnumerable<int> result = Task4.FilterDigit(source, digit);
+//             IEnumerable<int> result = Task4.FilterDigit(source, digit);
 
-            Assert.IsTrue(expected.SequenceEqual(result));
-}
+//             Assert.IsTrue(expected.SequenceEqual(result));
+// }
 }

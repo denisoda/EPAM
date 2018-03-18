@@ -13,6 +13,6 @@ namespace Solution.Extensions
         /// <param name="number"></param>
         /// <returns>Binary representation of the number</returns>
         public static string GetBinaryString(this double number)
-        => BitConverter.GetBytes(number).ToString();
+        => Convert.ToString(BitConverter.DoubleToInt64Bits(number), 2);
     }
 }
