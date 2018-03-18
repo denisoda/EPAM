@@ -9,9 +9,19 @@ namespace Solution
         /// </summary>
         /// <param name="Number"></param>
         /// <returns></returns>
-        public static int FindEvclidGCD(int Number)
+        public static int FindEvclidGCD(int first, int second)
         {
-            return 0;
+            while (first != second) 
+            {
+                if (first > second)
+                {
+                    first = first - second;
+                } else 
+                {
+                    second = second - first;
+                }
+	        }
+            return first;
         }
         /// <summary>
         /// Method finds greatest common number with a Stain's way
