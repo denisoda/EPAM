@@ -22,7 +22,7 @@ namespace Tasks.Tests.Task3Tests
 
             timeLead = Timer.GetLeadTimeFindNextBiggerNumber(number);
 
-            Assert.Pass($"Time lead is { timeLead.Elapsed.ToString()}");
+            Assert.Pass($"Time taked for executing : { timeLead.Elapsed.ToString()}");
         }
     }
 }

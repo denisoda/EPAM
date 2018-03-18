@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Solution.Number;
+using NUnit.Framework;
 
 namespace Solution.Number.Test
 {
