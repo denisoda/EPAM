@@ -2,6 +2,9 @@ using System;
 
 namespace Solution.Extensions
 {
+    /// <summary>
+    /// Extensions methods for the "Solution" namespace
+    /// </summary>
     public static class Extensions
     {
         /// <summary>
@@ -9,9 +12,7 @@ namespace Solution.Extensions
         /// </summary>
         /// <param name="number"></param>
         /// <returns>Binary representation of the number</returns>
-        public static string GetBinaryString(this double number){ 
-            var a = Convert.ToString(BitConverter.DoubleToInt64Bits(number), 2);
-            return BitConverter.GetBytes(number).ToString();
-            }
+        public static string GetBinaryString(this double number)
+        => BitConverter.GetBytes(number).ToString();
     }
 }
