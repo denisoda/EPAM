@@ -19,9 +19,15 @@ namespace Solution.Tests
         [TestCase(5, 10, ExpectedResult = 5)]
         [TestCase(0, 0, ExpectedResult = 0)]
         [TestCase(5, 10, ExpectedResult = 5)]
-        public int IsRetunCorrectGCD(int first, int second)
+        public int IsRetunCorrectGcd(int first, int second)
         {
             return Gcd.Evclid(first, second);
         }
+
+        // [Test]
+        // public int IsRetunCorrectGcdBinary(int first, int second)
+        // {
+        //     return Gcd.EvclidBin(first, second);
+        // }
     }
 }

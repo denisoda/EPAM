@@ -1,4 +1,5 @@
 ﻿using System;
+using Solution.Extencsions;
 
 namespace Solution
 {
@@ -30,7 +31,7 @@ namespace Solution
         /// Method finds greatest common number with a Stain's way
         /// </summary>
         /// <param name="Number"></param>
-        /// <returns></returns>
+        /// <returns>Great common value</returns>
         public static int EvclidBin(int a, int b)
         {
             int shift;
