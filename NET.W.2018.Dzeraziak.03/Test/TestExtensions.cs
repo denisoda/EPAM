@@ -8,6 +8,11 @@ namespace Solution.Extensions.Tests
     /// </summary>
     public class TestExtensions
     {
+        /// <summary>
+        /// Tests the correct convertatin from double to binary with string returning
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns>Binary converted representation</returns>
         [Test]
         [TestCase(-255.255, ExpectedResult = "1100000001101111111010000010100011110101110000101000111101011100")]
         [TestCase(255.255, ExpectedResult = "0100000001101111111010000010100011110101110000101000111101011100")]
