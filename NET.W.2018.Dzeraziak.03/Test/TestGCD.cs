@@ -21,7 +21,7 @@ namespace Solution.Tests
         [TestCase(5, 10, ExpectedResult = 5)]
         public int IsRetunCorrectGCD(int first, int second)
         {
-            return GCD.FindEvclidGCD(first, second);
+            return Gcd.Evclid(first, second);
         }
     }
 }
