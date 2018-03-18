@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tasks;
 using NUnit.Framework;
 using System.Diagnostics;
+using Solution.Timer;
 
 namespace Tasks.Tests.Task3Tests
 {
@@ -20,7 +20,7 @@ namespace Tasks.Tests.Task3Tests
         {
             Stopwatch timeLead;
 
-            timeLead = Task3.GetLeadTimeFindNextBiggerNumber(number);
+            timeLead = Timer.GetLeadTimeFindNextBiggerNumber(number);
 
             Assert.Pass($"Time lead is { timeLead.Elapsed.ToString()}");
         }
