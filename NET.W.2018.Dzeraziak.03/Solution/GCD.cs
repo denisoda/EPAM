@@ -9,7 +9,6 @@ namespace Solution
         /// <summary>
         /// Method finds greatest common number with an Evclid's way
         /// </summary>
-        /// <param name="Number"></param>
         /// <returns></returns>
         public static int Evclid(int first, int second)
         {
@@ -28,10 +27,10 @@ namespace Solution
 	        }
             return first;
         }
+
         /// <summary>
         /// Method finds greatest common number with a Stain's way
         /// </summary>
-        /// <param name="Number"></param>
         /// <returns>Great common value</returns>
         public static int EvclidBin(int a, int b)
         {

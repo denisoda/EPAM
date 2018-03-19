@@ -42,7 +42,7 @@ namespace Solution.Extensions
         /// <returns></returns>
         public static Stopwatch GetExecutionTime<T>(Func<T> method)
         {
-            Stopwatch sw = new Stopwatch();
+            var sw = new Stopwatch();
             sw.Start();
             method.Invoke();
             sw.Stop();
