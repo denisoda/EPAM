@@ -1,3 +1,5 @@
+using System;
+using System.Diagnostics;
 using NUnit.Framework;
 using Solution.Extensions;
 using System.Threading.Tasks;
@@ -25,12 +27,18 @@ namespace Solution.Extensions.Tests
         [TestCase(double.NegativeInfinity, ExpectedResult = "1111111111110000000000000000000000000000000000000000000000000000")]
         [TestCase(double.PositiveInfinity, ExpectedResult = "0111111111110000000000000000000000000000000000000000000000000000")]
         public string IsCorrectConvertationDoubleToBinaryInStringFormat(double number) 
-        => Extensions.GetBinaryString(number);
+        => number.GetBinaryString();
 
-        [Test]
-        public  string IsMethodFast()
+        /// <summary>
+        /// Test a total time for executing in a ticks
+        /// </summary>
+        /// <param name="time">Desired ticks for execution</param>
+        [TestCase(ExpectedResult = 3000)]
+        public long IsEvclidMethodFast(int time)
         {
-             return  Extensions.GetExecutionTime<int>(new Task<int>(t => Gcd.Evclid(10,100)));
+            var result = Extensions.GetExecutionTime(() => Gcd.Evclid(10, 100)).Elapsed.Ticks;
+
+            return result;
         }
     }
 }
