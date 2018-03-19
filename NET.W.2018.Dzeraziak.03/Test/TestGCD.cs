@@ -23,11 +23,5 @@ namespace Solution.Tests
         {
             return Gcd.Evclid(first, second);
         }
-
-        // [Test]
-        // public int IsRetunCorrectGcdBinary(int first, int second)
-        // {
-        //     return Gcd.EvclidBin(first, second);
-        // }
     }
 }

@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace Solution
 {
-    public class Gcd:IGetExectionTime
+    public class Gcd
     {
         /// <summary>
         /// Method finds greatest common number with an Evclid's way
@@ -59,10 +59,6 @@ namespace Solution
                 b = b - a;
             } while (b != 0);
             return a << shift;
-        }
-        IGetExectionTime ()
-        {
-            return S
         }
     }
 }

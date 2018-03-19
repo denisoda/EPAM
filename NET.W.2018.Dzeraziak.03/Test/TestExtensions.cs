@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using Solution.Extensions;
+using System.Threading.Tasks;
 
 namespace Solution.Extensions.Tests
 {
@@ -25,5 +26,11 @@ namespace Solution.Extensions.Tests
         [TestCase(double.PositiveInfinity, ExpectedResult = "0111111111110000000000000000000000000000000000000000000000000000")]
         public string IsCorrectConvertationDoubleToBinaryInStringFormat(double number) 
         => Extensions.GetBinaryString(number);
+
+        [Test]
+        public  string IsMethodFast()
+        {
+             return  Extensions.GetExecutionTime<int>(new Task<int>(t => Gcd.Evclid(10,100)));
+        }
     }
 }

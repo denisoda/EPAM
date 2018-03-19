@@ -34,5 +34,13 @@ namespace Solution.Extensions
                 return Math.Round(1e9 * time, numberofDigits) + " ns";
             return stopwatch.ElapsedTicks + " ticks";
         }
+        public static string GetExecutionTime<T>(Func <T> method)
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            method.Invoke();
+            sw.Stop();
+            return sw.GetTimeString();
+        }
     }
 }
