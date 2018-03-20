@@ -10,10 +10,11 @@ namespace Solution.Extensions
     /// </summary>
     public static class Extensions
     {
+        #region GetBinaryString
         /// <summary>
         /// Converts to the binary string
         /// </summary>
-        /// <param name="number"></param>
+        /// <param name="number">A number for converting</param>
         /// <returns>Binary representation of the double number</returns>
         public static string GetBinaryString(this double number)
         {
@@ -31,13 +32,13 @@ namespace Solution.Extensions
 
             return res.ToString();
         }
-
+        #endregion
         /// <summary>
         /// Gets the time for executing a method
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="method"></param>
-        /// <returns></returns>
+        /// <returns>Stopwatch object</returns>
         public static Stopwatch GetExecutionTime<T>(Func<T> method)
         {
             var sw = new Stopwatch();

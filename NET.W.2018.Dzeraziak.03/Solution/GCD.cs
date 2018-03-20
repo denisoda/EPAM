@@ -6,6 +6,7 @@ namespace Solution
 {
     public class Gcd
     {
+        #region Classic Evclid Gcd method
         /// <summary>
         /// Method finds greatest common number with an Evclid's way
         /// </summary>
@@ -27,7 +28,8 @@ namespace Solution
 	        }
             return first;
         }
-
+        #endregion
+        #region overloaded Evclid with 3 arguments
         public static int Evclid(int first, int second,int third)
         {
             while(first != second && second != third)
@@ -41,7 +43,7 @@ namespace Solution
             }
             return first;
         }
-
+        #endregion
         public static int EvclidRecursion(int a, int b)
         {   
             if(b == 0)
@@ -52,6 +54,7 @@ namespace Solution
         /// Method finds greatest common number with a Stain's way
         /// </summary>
         /// <returns>Great common value</returns>
+        #region BinaryEvclid
         public static int EvclidBin(int a, int b)
         {
             int shift;
@@ -80,5 +83,6 @@ namespace Solution
             
             return a << shift;
         }
+        #endregion
     }
 }
