@@ -1,3 +1,9 @@
+/**
+ * @author Ilya Dzeraziak
+ * @email IlyaDzeraziak@gmail.com
+ * @create date 2018-03-20 07:17:06
+*/
+
 using NUnit.Framework;
 using Solution;
 
