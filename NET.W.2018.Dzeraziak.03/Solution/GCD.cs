@@ -1,4 +1,11 @@
-﻿using System;
+﻿/**
+ * @author [author]
+ * @email [example@mail.com]
+ * @create date 2018-03-20 07:10:53
+ * @modify date 2018-03-20 07:10:53
+ * @desc [description]
+*/
+using System;
 using Solution.Extensions;
 using System.Diagnostics;
 
