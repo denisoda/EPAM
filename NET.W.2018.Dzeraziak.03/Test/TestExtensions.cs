@@ -26,7 +26,7 @@ namespace Solution.Extensions.Tests
         [TestCase(double.NaN, ExpectedResult = "1111111111111000000000000000000000000000000000000000000000000000")]
         [TestCase(double.NegativeInfinity, ExpectedResult = "1111111111110000000000000000000000000000000000000000000000000000")]
         [TestCase(double.PositiveInfinity, ExpectedResult = "0111111111110000000000000000000000000000000000000000000000000000")]
-        public string IsCorrectConvertationDoubleToBinaryInStringFormat(double number) 
+        public string GetBinaryString_BinaryString_IsReturnCorrect(double number) 
         => number.GetBinaryString();
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace Solution.Extensions.Tests
         /// </summary>
         /// <param name="time">Desired ticks for execution</param>
         [TestCase(ExpectedResult = 3000)]
-        public long IsEvclidMethodFast(int time)
+        public long Evclid_ExecutionTime_IsLessThan3000Ticks(int time)
         {
             var result = Extensions.GetExecutionTime(() => Gcd.Evclid(10, 100)).Elapsed.Ticks;
 

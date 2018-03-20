@@ -28,6 +28,26 @@ namespace Solution
             return first;
         }
 
+        public static int Evclid(int first, int second,int third)
+        {
+            while(first != second && second != third)
+            {
+                if(first > second && second > third)
+                    first -= second;
+                if(second > first && second > third)
+                    second -= first;
+                if(third > second && second > third)
+                    third -= second;
+            }
+            return first;
+        }
+
+        public static int EvclidRecursion(int a, int b)
+        {   
+            if(b == 0)
+                return a;
+            return EvclidRecursion(b, a % b);
+        }
         /// <summary>
         /// Method finds greatest common number with a Stain's way
         /// </summary>
