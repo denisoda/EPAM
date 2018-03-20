@@ -33,7 +33,7 @@ namespace Solution.Extensions.Tests
         /// Test a total time for executing in a ticks
         /// </summary>
         /// <param name="time">Desired ticks for execution</param>
-        [TestCase(ExpectedResult = 3000)]
+        [TestCase(ExpectedResult = 5000)]
         public long Evclid_ExecutionTime_IsLessThan3000Ticks(int time)
         {
             var result = Extensions.GetExecutionTime(() => Gcd.Evclid(10, 100)).Elapsed.Ticks;

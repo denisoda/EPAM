@@ -21,14 +21,14 @@ namespace Solution.Tests
         [TestCase(15, 10, 5, ExpectedResult = 5)]
         [TestCase(99, 15, 3, ExpectedResult = 3)]
         [TestCase(99, 15, 3, ExpectedResult = 3)]
-        [TestCase(1002, 55552, 98, ExpectedResult = 3)]
+        [TestCase(1002, 552, 98, ExpectedResult = 2)]
         public int Evclid_Gcd_IsReturnGcd(int first, int second, int third = 0)
         => third == 0 ? Gcd.Evclid(first, second) : Gcd.Evclid(first, second, third); 
         
         [Test]
         [TestCase(100, 45, ExpectedResult = 5)]
         [TestCase(45, 5, ExpectedResult = 5)]
-        [TestCase(228, 1488, ExpectedResult = 2)]
+        [TestCase(228, 1488, ExpectedResult = 12)]
         [TestCase(17, 7, ExpectedResult = 1)]
         [TestCase(5, 10, ExpectedResult = 5)]
         [TestCase(0, 0, ExpectedResult = 0)]
@@ -40,7 +40,7 @@ namespace Solution.Tests
         [Test]
         [TestCase(100, 45, ExpectedResult = 5)]
         [TestCase(45, 5, ExpectedResult = 5)]
-        [TestCase(228, 1488, ExpectedResult = 2)]
+        [TestCase(228, 1488, ExpectedResult = 12)]
         [TestCase(17, 7, ExpectedResult = 1)]
         [TestCase(5, 10, ExpectedResult = 5)]
         [TestCase(0, 0, ExpectedResult = 0)]
