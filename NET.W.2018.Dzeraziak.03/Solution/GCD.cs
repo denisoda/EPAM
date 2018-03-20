@@ -77,6 +77,7 @@ namespace Solution
                 }
                 b = b - a;
             } while (b != 0);
+            
             return a << shift;
         }
     }
