@@ -1,4 +1,11 @@
-﻿using System;
+﻿/**
+ * @author [author]
+ * @email [example@mail.com]
+ * @create date 2018-03-20 07:10:53
+ * @modify date 2018-03-20 07:10:53
+ * @desc [description]
+*/
+using System;
 using Solution.Extensions;
 using System.Diagnostics;
 
@@ -6,10 +13,10 @@ namespace Solution
 {
     public class Gcd
     {
+        #region Classic Evclid Gcd method
         /// <summary>
         /// Method finds greatest common number with an Evclid's way
         /// </summary>
-        /// <param name="Number"></param>
         /// <returns></returns>
         public static int Evclid(int first, int second)
         {
@@ -28,11 +35,33 @@ namespace Solution
 	        }
             return first;
         }
+        #endregion
+        #region overloaded Evclid with 3 arguments
+        public static int Evclid(int first, int second,int third)
+        {
+            while(first != second && second != third)
+            {
+                if(first > second && second > third)
+                    first -= second;
+                if(second > first && second > third)
+                    second -= first;
+                if(third > second && second > third)
+                    third -= second;
+            }
+            return first;
+        }
+        #endregion
+        public static int EvclidRecursion(int a, int b)
+        {   
+            if(b == 0)
+                return a;
+            return EvclidRecursion(b, a % b);
+        }
         /// <summary>
         /// Method finds greatest common number with a Stain's way
         /// </summary>
-        /// <param name="Number"></param>
         /// <returns>Great common value</returns>
+        #region BinaryEvclid
         public static int EvclidBin(int a, int b)
         {
             int shift;
@@ -58,7 +87,9 @@ namespace Solution
                 }
                 b = b - a;
             } while (b != 0);
+            
             return a << shift;
         }
+        #endregion
     }
 }

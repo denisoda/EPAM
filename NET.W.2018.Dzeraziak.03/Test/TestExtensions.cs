@@ -1,3 +1,11 @@
+/**
+ * @author Ilya Dzeraziak
+ * @email IlyaDzeraziak@gmail.com
+ * @create date 2018-03-20 07:16:47
+*/
+
+using System;
+using System.Diagnostics;
 using NUnit.Framework;
 using Solution.Extensions;
 using System.Threading.Tasks;
@@ -24,13 +32,19 @@ namespace Solution.Extensions.Tests
         [TestCase(double.NaN, ExpectedResult = "1111111111111000000000000000000000000000000000000000000000000000")]
         [TestCase(double.NegativeInfinity, ExpectedResult = "1111111111110000000000000000000000000000000000000000000000000000")]
         [TestCase(double.PositiveInfinity, ExpectedResult = "0111111111110000000000000000000000000000000000000000000000000000")]
-        public string IsCorrectConvertationDoubleToBinaryInStringFormat(double number) 
-        => Extensions.GetBinaryString(number);
+        public string GetBinaryString_BinaryString_IsReturnCorrect(double number) 
+        => number.GetBinaryString();
 
-        [Test]
-        public  string IsMethodFast()
+        /// <summary>
+        /// Test a total time for executing in a ticks
+        /// </summary>
+        /// <param name="time">Desired ticks for execution</param>
+        [TestCase(3000)]
+        public void Evclid_ExecutionTime_IsLessThan3000Ticks(int time)
         {
-             return  Extensions.GetExecutionTime<int>(new Task<int>(t => Gcd.Evclid(10,100)));
+            var executionTime = Extensions.GetExecutionTime(() => Gcd.Evclid(10, 100)).Elapsed.Ticks;
+
+            Assert.Less(executionTime, time);
         }
     }
 }

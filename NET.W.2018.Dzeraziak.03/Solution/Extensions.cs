@@ -1,5 +1,13 @@
+/**
+ * @author Ilya Dzeraziak
+ * @email IlyaDzeraziak@gmail.com
+ * @create date 2018-03-20 07:17:28
+*/
+
 using System;
 using System.Diagnostics;
+using System.Collections;
+using System.Text;
 
 namespace Solution.Extensions
 {
@@ -8,39 +16,42 @@ namespace Solution.Extensions
     /// </summary>
     public static class Extensions
     {
+        #region GetBinaryString
         /// <summary>
         /// Converts to the binary string
         /// </summary>
-        /// <param name="number"></param>
-        /// <returns>Binary representation of the number</returns>
+        /// <param name="number">A number for converting</param>
+        /// <returns>Binary representation of the double number</returns>
         public static string GetBinaryString(this double number)
-        => Convert.ToString(BitConverter.DoubleToInt64Bits(number), 2);
-        /// <summary>
-        /// An exension for Stopwatch class
-        /// </summary>
-        /// <param name="stopwatch"></param>
-        /// <param name="numberofDigits"></param>
-        /// <returns></returns>
-        public static string GetTimeString(this Stopwatch stopwatch, int numberofDigits = 1)
         {
-            double time = stopwatch.ElapsedTicks / (double)Stopwatch.Frequency;
-            if (time > 1)
-                return Math.Round(time, numberofDigits) + " s";
-            if (time > 1e-3)
-                return Math.Round(1e3 * time, numberofDigits) + " ms";
-            if (time > 1e-6)
-                return Math.Round(1e6 * time, numberofDigits) + " µs";
-            if (time > 1e-9)
-                return Math.Round(1e9 * time, numberofDigits) + " ns";
-            return stopwatch.ElapsedTicks + " ticks";
+            var bitArray = new BitArray(BitConverter.GetBytes(number));
+
+            var res = new StringBuilder(64);
+
+            for(int i = bitArray.Length - 1; i >= 0; i--)
+            {
+                if(bitArray[i] == false)
+                    res.Append('0');
+                else
+                    res.Append('1');
+            }
+
+            return res.ToString();
         }
-        public static string GetExecutionTime<T>(Func <T> method)
+        #endregion
+        /// <summary>
+        /// Gets the time for executing a method
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="method"></param>
+        /// <returns>Stopwatch object</returns>
+        public static Stopwatch GetExecutionTime<T>(Func<T> method)
         {
-            Stopwatch sw = new Stopwatch();
+            var sw = new Stopwatch();
             sw.Start();
             method.Invoke();
             sw.Stop();
-            return sw.GetTimeString();
+            return sw;
         }
     }
 }

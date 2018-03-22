@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace Solution.Sorts
 {
@@ -6,7 +6,7 @@ namespace Solution.Sorts
     {
         #region QickSort
 
-        ///<summary>Custom quickSort implementation</summary>  
+        ///<summary>QuickSort implementation</summary>  
          public  static void QuickSort(int[] array,int left,int right)
         {
             int k = left, i = right;
