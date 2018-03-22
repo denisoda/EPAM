@@ -1,13 +1,15 @@
+using System;
 using NUnit.Framework;
+using Solution.Polynom;
 
-namespace Solution.Tests.NUnit
+namespace Tests
 {
     public class Tests
     {
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+                    
         }
     }
 }

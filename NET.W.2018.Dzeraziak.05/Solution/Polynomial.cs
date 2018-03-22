@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace Solution
+namespace Solution.Polynom
 {
     /// <summary>
     /// Class that represents a mathematician polynom
     /// </summary>
-    public sealed class Polynomial
+    public sealed class Polynom
     {
         double[] _coefficients;
 
-        Polynomial(params double[] coefficients)
+        Polynom(params double[] coefficients)
         {
             _coefficients = coefficients;
         }
@@ -35,7 +35,7 @@ namespace Solution
             return results;
         }
 
-        public static Polynomial operator - (Polynomial pFirst, Polynomial pSecond)
+        public static Polynom operator - (Polynom pFirst, Polynom pSecond)
         {
             int itemCount = Math.Max(pFirst._coefficients.Length, pSecond._coefficients.Length);
             var result = new double[itemCount];
@@ -53,10 +53,10 @@ namespace Solution
                     }
                     result[i] = a - b;
             }
-            return new Polynomial(result);
+            return new Polynom(result);
         }
 
-        public static Polynomial operator +(Polynomial pFirst, Polynomial pSecond)
+        public static Polynom operator +(Polynom pFirst, Polynom pSecond)
         {
             int itemsCount = Math.Max(pFirst._coefficients.Length, pSecond._coefficients.Length);
             var result = new double[itemsCount];
@@ -75,10 +75,10 @@ namespace Solution
                 result[i] = a + b;
             }
 
-            return new Polynomial(result);
+            return new Polynom(result);
         }
 
-        public static Polynomial operator *(Polynomial pFirst, Polynomial pSecond)
+        public static Polynom operator *(Polynom pFirst, Polynom pSecond)
         {
             int itemsCount = pFirst._coefficients.Length + pSecond._coefficients.Length - 1;
             var result = new double[itemsCount];
@@ -90,7 +90,7 @@ namespace Solution
                 }
             }
 
-            return new Polynomial(result);
+            return new Polynom(result);
         }
     }
 }
