@@ -1,6 +1,6 @@
 using System;
 
-namespace Solution
+namespace Solution.Sort
 {
     public class SortBuble
     {
@@ -9,7 +9,7 @@ namespace Solution
         /// </summary>
         /// <param name="arr">Jagged array</param>
         /// <returns>Jagged array</returns>
-        static int [][]Sort(int[][] arr)
+        static int [][]SortAscending(int[][] arr)
         {
             for(int f = 0; f < arr.Length - 2; f++)
             {
