@@ -2,14 +2,14 @@ using System;
 using NUnit.Framework;
 using Solution.Polynom;
 
-namespace Tests
+namespace Solution.Test.NUnit
 {
     public class Tests
     {
         [Test]
-        public void Test1()
+        public void Sort_IsSorted_Ascending()
         {
-                    
+            
         }
     }
 }
