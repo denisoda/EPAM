@@ -4,6 +4,11 @@ namespace Solution
 {
     public class SortBuble
     {
+        /// <summary>
+        /// An implementation of buble sorting algorithm for a jagged array
+        /// </summary>
+        /// <param name="arr">Jagged array</param>
+        /// <returns>Jagged array</returns>
         static int [][]Sort(int[][] arr)
         {
             for(int f = 0; f < arr.Length - 2; f++)
