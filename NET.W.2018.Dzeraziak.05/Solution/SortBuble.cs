@@ -18,7 +18,7 @@ namespace Solution
                     } 
                 }
             }
-            return new int[][]{};
+            return arr;
         }
     }
 }
