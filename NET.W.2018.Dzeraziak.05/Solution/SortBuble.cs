@@ -9,7 +9,7 @@ namespace Solution.Sort
         /// </summary>
         /// <param name="arr">Jagged array</param>
         /// <returns>Jagged array</returns>
-        static int [][]SortAscending(int[][] arr)
+        public static int [][]SortAscending(int[][] arr)
         {
             for(int f = 0; f < arr.Length - 2; f++)
             {

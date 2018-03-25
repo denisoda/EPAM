@@ -21,9 +21,17 @@ namespace Solution.Polynom
         }
 
         public int Order => _coefficients.Length;
-
+        /// <summary>
+        /// An overloading of the object's virtual method for the formatted output
+        /// </summary>
+        /// <returns>Formated string</returns>        
         public override string ToString() => string.Format("Coefficients:*" + string.Join(";*", _coefficients));
 
+        /// <summary>
+        /// A function which calculates two polynoms
+        /// </summary>
+        /// <param name="x">A real number coofficient</param>
+        /// <returns>Calculated coofficient</returns>
         public double Calculate(double x)
         {
             int n = _coefficients.Length - 1;
@@ -35,6 +43,12 @@ namespace Solution.Polynom
             return results;
         }
 
+        /// <summary>
+        /// An overloading of the minus operator for polynom's objects 
+        /// </summary>
+        /// <param name="pFirst">First polynom</param>
+        /// <param name="pSecond">Second polynom</param>
+        /// <returns>A result of the substaction</returns>
         public static Polynom operator - (Polynom pFirst, Polynom pSecond)
         {
             int itemCount = Math.Max(pFirst._coefficients.Length, pSecond._coefficients.Length);
@@ -56,6 +70,12 @@ namespace Solution.Polynom
             return new Polynom(result);
         }
 
+        /// <summary>
+        /// An overloading of the plus operator for polynom's objects 
+        /// </summary>
+        /// <param name="pFirst">First polynom</param>
+        /// <param name="pSecond">Second polynom</param>
+        /// <returns>A result of the addition</returns>
         public static Polynom operator +(Polynom pFirst, Polynom pSecond)
         {
             int itemsCount = Math.Max(pFirst._coefficients.Length, pSecond._coefficients.Length);
@@ -77,7 +97,13 @@ namespace Solution.Polynom
 
             return new Polynom(result);
         }
-
+        
+        /// <summary>
+        /// An overloading of the multiplication operator for polynom's objects 
+        /// </summary>
+        /// <param name="pFirst">First polynom</param>
+        /// <param name="pSecond">Second polynom</param>
+        /// <returns>A result of the multiplication</returns>
         public static Polynom operator *(Polynom pFirst, Polynom pSecond)
         {
             int itemsCount = pFirst._coefficients.Length + pSecond._coefficients.Length - 1;
