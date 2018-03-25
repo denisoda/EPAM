@@ -4,6 +4,7 @@ namespace Solution.Sort
 {
     public class SortBuble
     {
+        #region Sorting public methods
         /// <summary>
         /// An implementation of buble sorting algorithm for a jagged array
         /// </summary>
@@ -54,4 +55,5 @@ namespace Solution.Sort
             return arr;
         }
     }
+    #endregion
 }

@@ -7,6 +7,7 @@ namespace Solution.Test.NUnit
 {
     public class Tests
     {   
+        #region Ascending test
         /// <summary>
         /// Tests the jagged array buble sorting in an ascending order 
         /// </summary>
@@ -27,7 +28,9 @@ namespace Solution.Test.NUnit
             
             Assert.AreEqual(desiredResult, test);            
         }
+        #endregion
 
+        #region Descending test
         /// <summary>
         /// Tests the jagged array buble sorting in an descending order 
         /// </summary>
@@ -48,5 +51,6 @@ namespace Solution.Test.NUnit
             
             Assert.AreEqual(desiredResult, test);            
         }
+        #endregion
     }
 }
