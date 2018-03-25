@@ -27,5 +27,26 @@ namespace Solution.Test.NUnit
             
             Assert.AreEqual(desiredResult, test);            
         }
+
+        /// <summary>
+        /// Tests the jagged array buble sorting in an descending order 
+        /// </summary>
+        [Test]
+        public void SortBuble_IsSorted_Descending()
+        {
+            int[][] sortArray = new int[][]
+            {
+                new int[] {5, 2, 4, 8, 35}
+            };
+
+            var test = SortBuble.SortDescending(sortArray);
+
+            var desiredResult = new int[][]
+            {
+                new int[] {35, 8, 5, 4, 2}
+            };
+            
+            Assert.AreEqual(desiredResult, test);            
+        }
     }
 }
