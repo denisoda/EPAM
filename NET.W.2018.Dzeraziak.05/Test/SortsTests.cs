@@ -6,9 +6,12 @@ using Solution;
 namespace Solution.Test.NUnit
 {
     public class Tests
-    {
+    {   
+        /// <summary>
+        /// Tests the jagged array buble sorting in an ascending order 
+        /// </summary>
         [Test]
-        public void SortBuble_IsSorted_Ascending(int [][] arr)
+        public void SortBuble_IsSorted_Ascending()
         {
             int[][] sortArray = new int[][]
             {

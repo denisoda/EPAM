@@ -8,12 +8,12 @@ namespace Solution.Sort
         /// An implementation of buble sorting algorithm for a jagged array
         /// </summary>
         /// <param name="arr">Jagged array</param>
-        /// <returns>Jagged array</returns>
-        public static int [][]SortAscending(int[][] arr)
+        /// <returns>Sorted in ascending order jagged array</returns>
+        public static int [][] SortAscending(int[][] arr)
         {
-            for(int f = 0; f < arr.Length - 2; f++)
+            for(int f = 0; f <= arr.Length - 1; f++)
             {
-                for(int i = 0; i < arr.Length - 2; i++)
+                for(int i = 0; i < arr[f].Length - 2; i++)
                 {
                     if(arr[f][i] > arr[f][i+1])
                     {
