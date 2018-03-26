@@ -67,7 +67,7 @@ namespace Solution.Test.NUnit
 
             var actualResult = SortBuble.SortRowsSum(sortArray);
 
-            int[] desiredResult = new int []{35, 237, 64, 238};
+            int[] desiredResult = new int []{54, 64, 237, 238};
 
             Assert.That(actualResult, Is.EqualTo(desiredResult));
         }

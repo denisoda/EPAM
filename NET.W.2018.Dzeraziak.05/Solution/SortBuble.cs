@@ -76,15 +76,15 @@ namespace Solution.Sort
 
             int[] sum =  arr.RowsSum();
 
-            for(int i = 0; i < sum.Length - 1; i++)
+            for(int i = 0; i < sum.Length; i++)
             {
-                for(int j = 0; j < sum.Length - 2; j++)
+                for(int j = 0; j < sum.Length - 1; j++)
                 {
-                    if(sum[i] > sum[i + 1])
+                    if(sum[j] > sum[j + 1])
                     {
-                        int buf = sum[i + 1];
-                        sum[i] = sum[i + 1];
-                        sum[i + 1] = buf;
+                        int buf = sum[j];
+                        sum[j] = sum[j + 1];
+                        sum[j + 1] = buf;
                     }
                 }
             }
