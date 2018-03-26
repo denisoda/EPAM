@@ -69,7 +69,7 @@ namespace Solution.Sort
         /// </summary>
         /// <param name="arr">Two dementional array for sorting</param>
         /// <returns>Sorted array</returns>
-        public static int [] SortRows(int [][] arr)
+        public static int [] SortRowsSum(int [][] arr)
         {
             if(arr is null)
                 throw new ArgumentNullException(nameof(arr));
