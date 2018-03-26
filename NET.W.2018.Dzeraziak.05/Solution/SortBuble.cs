@@ -1,4 +1,5 @@
 using System;
+using Solution.Extensions;
 
 namespace Solution.Sort
 {
@@ -61,6 +62,34 @@ namespace Solution.Sort
                     }
                 }
             return arr;
+        }
+
+        /// <summary>
+        /// An emplementation of row sum sorting algorithm
+        /// </summary>
+        /// <param name="arr">Two dementional array for sorting</param>
+        /// <returns>Sorted array</returns>
+        public static int [] SortRows(int [][] arr)
+        {
+            if(arr is null)
+                throw new ArgumentNullException(nameof(arr));
+
+            int[] sum =  arr.RowsSum();
+
+            for(int i = 0; i < sum.Length - 1; i++)
+            {
+                for(int j = 0; j < sum.Length - 2; j++)
+                {
+                    if(sum[i] > sum[i + 1])
+                    {
+                        int buf = sum[i + 1];
+                        sum[i] = sum[i + 1];
+                        sum[i + 1] = buf;
+                    }
+                }
+            }
+
+            return sum;
         }
     }
     #endregion

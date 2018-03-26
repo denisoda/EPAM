@@ -4,6 +4,10 @@ namespace Solution.Extensions
 {
     public  static class Extensions
     {
+        /// <summary>
+        ///An exension which calculates the sum of the row in a two dementional array
+        /// </summary>
+        /// <returns>An array with sum of elements</returns>
         public static int [] RowsSum(this int[][] arr)
         {
             if(arr is null)
