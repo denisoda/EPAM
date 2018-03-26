@@ -1,16 +1,23 @@
 ﻿using System;
+using Solution.Extensions;
 
 namespace Solution.Polynom
 {
     /// <summary>
-    /// Class that represents a mathematician polynom
+    /// Class that represents the polynom
+    /// <exeption>
+    /// <paramref name="coefficients"/> is null
+    /// </exeption>
     /// </summary>
     public sealed class Polynom
     {
         double[] _coefficients;
-
+        
         Polynom(params double[] coefficients)
         {
+            if(coefficients == null)
+                throw new ArgumentNullException(nameof(coefficients));
+
             _coefficients = coefficients;
         }
 
