@@ -54,7 +54,7 @@ namespace Solution.Test.NUnit
 
 
         [Test]
-        public void SortRowsSum_IsSorted_Ascending(int [][] arr) 
+        public void SortRowsSum_IsSorted_Ascending() 
         {
             int[][] sortArray = new int[][]
             {
@@ -64,11 +64,11 @@ namespace Solution.Test.NUnit
                 new int[] {90, 34, 77, 2, 35}
             };
 
-            var actualResult = SortBuble.SortDescending(sortArray);
+            var actualResult = SortBuble.SortRowsSum(sortArray);
 
             int[] desiredResult = new int []{35, 237, 64, 238};
 
-            Assert.AreEqual(desiredResult, actualResult);
+            Assert.That(actualResult, Is.EqualTo(desiredResult));
         }
         #endregion
     }
