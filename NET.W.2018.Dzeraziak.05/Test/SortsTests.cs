@@ -51,8 +51,9 @@ namespace Solution.Test.NUnit
             
             Assert.AreEqual(desiredResult, test);            
         }
+        #endregion
 
-
+        #region SortRowsSum tests
         [Test]
         public void SortRowsSum_IsSorted_Ascending() 
         {

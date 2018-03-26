@@ -19,7 +19,7 @@ namespace Solution.Extensions
 
                 for(int i = 0; i < arr.Length - 1; i++)
                 {
-                    for(int j = 0; j < arr[i].Length - 1; i++)
+                    for(int j = 0; j < arr[i].Length - 1; j++)
                     {
                         sum[i] += arr[i][j];
                     }
