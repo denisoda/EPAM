@@ -17,9 +17,9 @@ namespace Solution.Extensions
 
             int [] sum = new int[arr.Length];
 
-                for(int i = 0; i < arr.Length - 1; i++)
+                for(int i = 0; i < arr.Length; i++)
                 {
-                    for(int j = 0; j < arr[i].Length - 1; j++)
+                    for(int j = 0; j < arr[i].Length; j++)
                     {
                         sum[i] += arr[i][j];
                     }
