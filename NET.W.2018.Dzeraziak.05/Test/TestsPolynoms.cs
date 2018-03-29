@@ -9,7 +9,7 @@ namespace Solution.Polynom.UnitTest.NUnit
     {
         [Test]
         [TestCase(new double[]{1.5, 15, 2.15, 3.45}, new double[]{1.5, 15, 2.15, 3.45}, ExpectedResult = "Coefficients:*")]
-        public void PolynomSum_Addition_IsCorrect(double[] pFirst, double[] pSecond)
+        public void PolynomSum_AdditionToString_IsCorrect(double[] pFirst, double[] pSecond)
         {
             var polynomFirst = new Polynom(pFirst);
             var polynomSecond = new Polynom(pSecond);
