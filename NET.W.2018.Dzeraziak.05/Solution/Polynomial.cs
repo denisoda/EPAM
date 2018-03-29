@@ -13,7 +13,7 @@ namespace Solution.Polynom
     {
         double[] _coefficients;
         
-        Polynom(params double[] coefficients)
+        public Polynom(params double[] coefficients)
         {
             if(coefficients == null)
                 throw new ArgumentNullException(nameof(coefficients));
