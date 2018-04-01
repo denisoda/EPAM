@@ -6,6 +6,9 @@ using System.IO;
 
 namespace Solution.Polynom.UnitTest.NUnit
 {
+    /// <summary>
+    /// Tests the polynoms to string mehtod
+    /// </summary>
     public class TestsPolynoms
     {
         [Test]
