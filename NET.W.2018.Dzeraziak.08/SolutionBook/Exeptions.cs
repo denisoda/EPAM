@@ -6,6 +6,10 @@ namespace SolutionBook
 {
     internal class PriceIsNegativeValueException : Exception
     {
+        /// <summary>
+        /// Throws an exeption in case of price less than zero
+        /// </summary>
+        /// <param name="message">Message for the exeption</param>
         public PriceIsNegativeValueException(string message)
             : base(message)
         {

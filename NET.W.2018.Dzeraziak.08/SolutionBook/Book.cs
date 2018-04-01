@@ -10,7 +10,9 @@ namespace SolutionBook
     {
         private string _isbn;
         private string _author;
+        private string _publisher;
         private DateTime _publishDate;
+        private decimal _price;
 
         public string Isbn
         {
@@ -44,13 +46,13 @@ namespace SolutionBook
             get => _author;
         }
 
-        public string Name {
+        public string NameOfBook {
 
             private set
             {
-                if (Regex.IsMatch(value, @"[A-ZА-Я]"))
+                if (Regex.IsMatch(value, @"^[A-Za-zА-Яа-я ]*$"))
                 {
-                    throw new ValidationException($"Is not valid {nameof(Name)}");
+                    throw new ValidationException($"Is not valid {nameof(NameOfBook)}");
                 }
                 else
                 {
@@ -65,9 +67,13 @@ namespace SolutionBook
         {
             set
             {
-                if (Regex.IsMatch(value, @"[A-ZА-Я"))
+                if (Regex.IsMatch(value, @"^[A-ZА-Яa-zа-я ]*$"))
                 {
                     throw new ValidationException($"Is not valid {nameof(Publisher)}");
+                }
+                else
+                {
+                    _publisher = value;
                 }
             }
 
@@ -83,15 +89,21 @@ namespace SolutionBook
 
         public ushort PageNumber{private set; get; }
 
-        public ref readonly decimal Price
+        public decimal Price
         {
-            set
+            private set
             {
                 if (value < 0)
                 {
-                    throw new value
+                    throw new PriceIsNegativeValueException($"{nameof(Price)} can not be less than zero");
+                }
+                else
+                {
+                    _price = value;
                 }
             }
+
+            get => _price;
         }
        
 
@@ -99,7 +111,7 @@ namespace SolutionBook
         {
             Isbn = isbn;
             Author = author;
-            Name = name;
+            NameOfBook = name;
             Publisher = publisher;
             PublishYear = publishYear;
             PageNumber = pageNumber;
