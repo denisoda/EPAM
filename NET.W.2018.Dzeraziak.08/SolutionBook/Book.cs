@@ -65,7 +65,7 @@ namespace SolutionBook
 
         public string Publisher
         {
-            set
+            private set
             {
                 if (Regex.IsMatch(value, @"^[A-ZА-Яa-zа-я ]*$"))
                 {
@@ -80,9 +80,22 @@ namespace SolutionBook
             get => _publisher;
         }
 
-        public int PublishYear
+        public  int PublishYear
         {
-            private set => _publishDate = new DateTime(value, 0, 0);
+            private set
+            {
+                if (value < DateTime.MinValue.Year)
+                {
+                    throw new ArgumentException($"{nameof(PublishYear)}'s value below the maximum possible");
+                }
+
+                if (value > DateTime.MaxValue.Year)
+                {
+                    throw new ArgumentException($"{nameof(PublishYear)}'s value above the maximum possible");
+                }
+
+                _publishDate = new DateTime(value, 1, 1);
+            }
 
             get => _publishDate.Year;
         }
