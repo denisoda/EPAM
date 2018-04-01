@@ -123,6 +123,10 @@ namespace SolutionBook
             get => _price;
         }
 
+        #endregion
+
+        #region Constructor
+
         public Book(string isbn, string author, string name, string publisher, int publishYear, ushort pageNumber, decimal price)
         {
             Isbn = isbn;

@@ -6,8 +6,12 @@ namespace SolutionBook
 {
     class BooksListService
     {
-        #region Private Fields
+        #region Private Fields 
+
         private List<Book> _books;
+
         #endregion
+
+        public int NumberOfBooks => _books.Count;
     }
 }
