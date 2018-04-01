@@ -50,13 +50,13 @@ namespace SolutionBook
 
             private set
             {
-                if (Regex.IsMatch(value, @"^[A-Za-zА-Яа-я ]*$"))
+                if (Regex.IsMatch(value, @"^[\D ]*$"))
                 {
-                    throw new ArgumentException($"Is not valid name of {nameof(NameOfBook)}");
+                    _author = value;
                 }
                 else
                 {
-                    _author = value;
+                    throw new ArgumentException($"Is not valid name of {nameof(NameOfBook)}");
                 }
             }
 
@@ -69,11 +69,11 @@ namespace SolutionBook
             {
                 if (Regex.IsMatch(value, @"^[A-ZА-Яa-zа-я ]*$"))
                 {
-                    throw new ArgumentException($"Is not valid name of {nameof(Publisher)}");
+                    _publisher = value;
                 }
                 else
                 {
-                    _publisher = value;
+                    throw new ArgumentException($"Is not valid name of {nameof(Publisher)}");
                 }
             }
 
