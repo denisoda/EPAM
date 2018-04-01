@@ -6,6 +6,7 @@ namespace SolutionBook
 {
     internal class PriceIsNegativeValueException : Exception
     {
+        /// <inheritdoc />
         /// <summary>
         /// Throws an exeption in case of price less than zero
         /// </summary>

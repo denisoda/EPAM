@@ -40,7 +40,7 @@ namespace SolutionBook
                 }
                 else
                 {
-                    throw new ValidationException($"Is not valid {nameof(Author)}");
+                    throw new ArgumentException($"Is not valid {nameof(Author)}");
                 }
             }
             get => _author;
@@ -52,7 +52,7 @@ namespace SolutionBook
             {
                 if (Regex.IsMatch(value, @"^[A-Za-zА-Яа-я ]*$"))
                 {
-                    throw new ValidationException($"Is not valid {nameof(NameOfBook)}");
+                    throw new ArgumentException($"Is not valid {nameof(NameOfBook)}");
                 }
                 else
                 {
@@ -69,7 +69,7 @@ namespace SolutionBook
             {
                 if (Regex.IsMatch(value, @"^[A-ZА-Яa-zа-я ]*$"))
                 {
-                    throw new ValidationException($"Is not valid {nameof(Publisher)}");
+                    throw new ArgumentException($"Is not valid {nameof(Publisher)}");
                 }
                 else
                 {
