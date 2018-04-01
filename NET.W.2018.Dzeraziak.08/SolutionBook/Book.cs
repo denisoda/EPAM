@@ -8,11 +8,15 @@ namespace SolutionBook
 {
     public class Book
     {
+        #region Private fields
         private string _isbn;
         private string _author;
         private string _publisher;
         private DateTime _publishDate;
         private decimal _price;
+        #endregion
+
+        #region Public properties
 
         public string Isbn
         {
@@ -118,7 +122,6 @@ namespace SolutionBook
 
             get => _price;
         }
-       
 
         public Book(string isbn, string author, string name, string publisher, int publishYear, ushort pageNumber, decimal price)
         {
@@ -130,5 +133,7 @@ namespace SolutionBook
             PageNumber = pageNumber;
             Price = price;
         }
+
+        #endregion
     }
 }
