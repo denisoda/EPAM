@@ -31,16 +31,17 @@ namespace SolutionBook
             _books.Add(book);
         }
 
-        public Book FinBookByTag(Book book)
+        /// <summary>
+        /// Finds the book by the given criteria
+        /// </summary>
+        /// <param name="tag">The predicate delegate</param>
+        /// <returns>A book found by the given criteria</returns>
+        public Book FinBookByAuthor(Predicate <Book> tag)
         {
-            if (book is null)
-                throw new NullReferenceException();
+            if (tag is null)
+                throw new ArgumentNullException();
 
-            if (_books.Contains(book))
-                return book;                
-            else 
-                throw new BookServiceTheListDoesnotContaingTheBookExeption(); 
-            
+            return _books.Find(tag);
         }
 
         #endregion

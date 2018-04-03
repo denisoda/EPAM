@@ -130,7 +130,7 @@ namespace SolutionBook
 
         #endregion
 
-        #region Constructor
+        #region Constructors
 
         public Book(string isbn, string author, string name, string publisher, int publishYear, ushort pageNumber, decimal price)
         {
@@ -144,6 +144,8 @@ namespace SolutionBook
         }
 
         #endregion
+
+        #region Interface realization
 
         /// <summary>
         /// Compares the prices of the book's object
@@ -171,5 +173,7 @@ namespace SolutionBook
 
             return this == other;
         }
+
+        #endregion
     }
 }

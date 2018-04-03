@@ -16,10 +16,8 @@ namespace SolutionBook
             bk.AddBook(bookOther);
             bk.AddBook(bookOther0);
 
-            for (int i = 0; i < bk.NumberOfBooks; i++)
-            {
+            var a = bk.FinBookByAuthor((book1 => book1.PublishYear == 2014));
 
-            }
         }
     }
 }
