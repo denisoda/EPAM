@@ -6,7 +6,10 @@ namespace Solution.Polynom
     /// <summary>
     /// Class that represents the polynom
     /// <exeption>
-    /// <paramref name="coefficients"/> is null
+    /// <paramref>
+    ///     <name>coefficients</name>
+    /// </paramref>
+    ///     is null
     /// </exeption>
     /// </summary>
     public sealed class Polynom
