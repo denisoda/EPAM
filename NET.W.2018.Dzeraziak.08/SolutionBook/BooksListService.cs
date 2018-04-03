@@ -66,9 +66,16 @@ namespace SolutionBook
             }
         }
 
+        public void SortByTag(IComparer<Book> comparer)
+        {
+            if(comparer == null)
+                throw new ArgumentNullException();
+
+            _books.Sort(comparer);
+        }
         #endregion
 
-        public void SaveToFile(Book file)
+        public void SaveToFile()
         {
             dataFolder = new Data();
 
@@ -76,7 +83,7 @@ namespace SolutionBook
 
             using (BinaryWriter bw = new BinaryWriter(File.Open(Data.path, FileMode.Create)))
             {
-                //bw.Write(file);
+                bw.Write(_books);
             }
         }
 

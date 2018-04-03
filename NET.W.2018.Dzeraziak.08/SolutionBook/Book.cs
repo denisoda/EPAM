@@ -173,7 +173,8 @@ namespace SolutionBook
             if (other is null)
                 throw new NullReferenceException();
 
-            return this == other;
+            return Title.Equals(other.Title) && Isbn.Equals(other.Isbn) && Author.Equals(other.Author) && PublishYear.Equals(other.PublishYear)
+                && PageNumber.Equals(other.PageNumber) && Price.Equals(other.Price);
         }
 
         #endregion
