@@ -10,8 +10,7 @@ namespace SolutionBook.Exeptions
         /// Throws the exeption if the list does not contain a book
         /// </summary>
         /// <param name="message">Additional message</param>
-        public BookServiceTheListDoesnotContaingTheBookExeption(string message)
-            : base(message)
+        public BookServiceTheListDoesnotContaingTheBookExeption()
         {
         }
     }

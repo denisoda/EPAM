@@ -39,7 +39,7 @@ namespace SolutionBook
             if (_books.Contains(book))
                 return book;                
             else 
-                throw new 
+                throw new BookServiceTheListDoesnotContaingTheBookExeption(); 
             
         }
 
