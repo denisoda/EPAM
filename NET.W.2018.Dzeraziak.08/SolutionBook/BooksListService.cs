@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SolutionBook.Exeptions;
 
 namespace SolutionBook
 {
@@ -16,10 +17,12 @@ namespace SolutionBook
 
         #region Publiu Methods
 
-        void AddBook(Book book)
+        public void AddBook(Book book)
         {
             if(books.Contains(book))
-                throw new 
+                throw new BookIsAlredyInTheListExeption($"The book is alredy in the {nameof(books)} list"); 
+            
+            books.Add(book);
         }
 
         #endregion

@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using System.Xml;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using SolutionBook.Exeptions;
@@ -10,7 +11,7 @@ namespace SolutionBook
     /// <summary>
     /// Class represents a Book item
     /// </summary>
-    public class Book
+    public class Book : IComparer<Book>, IEquatable<Book>
     {
         #region Private fields
         private string _isbn;
@@ -108,7 +109,7 @@ namespace SolutionBook
             get => _publishDate.Year;
         }
 
-        public ushort PageNumber{private set; get; }
+        public ushort PageNumber{ private set; get; }
 
         public decimal Price
         {
@@ -143,5 +144,32 @@ namespace SolutionBook
         }
 
         #endregion
+
+        /// <summary>
+        /// Compares the prices of the book's object
+        /// </summary>
+        /// <param name="x">First book's object</param>
+        /// <param name="y">Second book's object</param>
+        /// <returns>1 if the price of the first book is bigger that second one</returns>
+        public int Compare(Book x, Book y)
+        {
+            if(x is null || y is null)
+                throw new NullReferenceException();
+
+            return x.Price > y.Price ? 1 : 0;
+        }
+
+        /// <summary>
+        /// Equaliate the objects
+        /// </summary>
+        /// <param name="other">Object for equality check</param>
+        /// <returns>Bool varible which represents equlity of the objects</returns>
+        public bool Equals(Book other)
+        {
+            if (other is null)
+                throw new NullReferenceException();
+
+            return this == other;
+        }
     }
 }
