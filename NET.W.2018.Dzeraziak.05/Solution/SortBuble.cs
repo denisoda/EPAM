@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using Solution.Extensions;
 
 namespace Solution.Sort
@@ -23,11 +25,9 @@ namespace Solution.Sort
                     {
                         for(int i = 0; i < arr[f].Length - 1; i++)
                         {
-                            if(arr[f][i] > arr[f][i+1])
+                            if(arr[f][i] > arr[f][i + 1])
                             {
-                                int buf = arr[f][i];
-                                arr[f][i] = arr[f][i + 1];
-                                arr[f][i + 1] = buf;
+                                swap(ref arr[f][i + 1], ref arr[f][i]);
                             } 
                         }
                     }
@@ -52,11 +52,9 @@ namespace Solution.Sort
                     {
                         for(int i = 0; i < arr[f].Length - 1; i++)
                         {
-                            if(arr[f][i] < arr[f][i+1])
+                            if(arr[f][i] < arr[f][i + 1])
                             {
-                                int buf = arr[f][i + 1];
-                                arr[f][i + 1] = arr[f][i];
-                                arr[f][i] = buf;
+                                swap(ref arr[f][i + 1], ref arr[f][i]);
                             } 
                         }
                     }
@@ -82,14 +80,19 @@ namespace Solution.Sort
                 {
                     if(sum[j] > sum[j + 1])
                     {
-                        int buf = sum[j];
-                        sum[j] = sum[j + 1];
-                        sum[j + 1] = buf;
+                        swap(ref sum[j], ref sum[j + 1]);
                     }
                 }
             }
 
             return sum;
+        }
+
+        private static void swap<T>(ref T first, ref T second)
+        {
+            T temp = first;
+            first = second;
+            second = temp;
         }
     }
     #endregion

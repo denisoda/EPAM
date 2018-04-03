@@ -11,14 +11,11 @@ namespace Solution.Polynom
     /// </summary>
     public sealed class Polynom
     {
-        double[] _coefficients;
+        private readonly double[] _coefficients;
         
         public Polynom(params double[] coefficients)
         {
-            if(coefficients == null)
-                throw new ArgumentNullException(nameof(coefficients));
-
-            _coefficients = coefficients;
+            _coefficients = coefficients ?? throw new ArgumentNullException(nameof(coefficients));
         }
 
         public double this[int n]
