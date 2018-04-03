@@ -181,9 +181,9 @@ namespace SolutionBook
         #region Overridings
 
         public override string ToString() =>
-            $"{Title} was written by {Author} in {PublishYear}. Published by '{Publisher}'. Price: {Price:C} ISBN - {Isbn}";
+            $"{Title} was written by {Author} in {PublishYear}. Published by \"{Publisher}\". Price: {Price:C} ISBN - {Isbn}";
 
-
+        public override int GetHashCode() => Author.Length ^ PublishYear + Title.Length;
 
         #endregion
     }
