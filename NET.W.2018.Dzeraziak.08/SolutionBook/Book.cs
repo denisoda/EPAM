@@ -3,9 +3,13 @@ using System.Xml;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using SolutionBook.Exeptions;
 
 namespace SolutionBook
 {
+    /// <summary>
+    /// Class represents a Book item
+    /// </summary>
     public class Book
     {
         #region Private fields

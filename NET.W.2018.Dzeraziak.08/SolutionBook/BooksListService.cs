@@ -8,10 +8,20 @@ namespace SolutionBook
     {
         #region Private Fields 
 
-        private List<Book> _books;
+        private List<Book> books;
 
         #endregion
 
-        public int NumberOfBooks => _books.Count;
+        public int NumberOfBooks => books.Count;
+
+        #region Publiu Methods
+
+        void AddBook(Book book)
+        {
+            if(books.Contains(book))
+                throw new 
+        }
+
+        #endregion
     }
 }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SolutionBook
+namespace SolutionBook.Exeptions
 {
-    internal class PriceIsNegativeValueException : Exception
+    public class PriceIsNegativeValueException : Exception
     {
         /// <inheritdoc />
         /// <summary>
