@@ -8,7 +8,7 @@ using SolutionBook.Interfaces;
 
 namespace SolutionBook
 {
-    class BooksListService : IFileSaver<Book>
+    class BooksListService : IFileSaver
     {
         #region Private Fields 
 
@@ -81,16 +81,12 @@ namespace SolutionBook
 
             dataFolder.CreateDataFolder();
 
-            using (BinaryWriter bw = new BinaryWriter(File.Open(Data.path, FileMode.Create)))
+            using (Stream stream = File.Open(Path.DirectorySeparatorChar + "data.books.bin", FileMode.Create))
             {
-                bw.Write(_books);
+                var bformat = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+
+                bformat.Serialize(stream, _books);
             }
-        }
-
-
-        public override string ToString()
-        {
-            return base.ToString();
         }
     }
 }

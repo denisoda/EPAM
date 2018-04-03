@@ -8,11 +8,11 @@ namespace SolutionBook
 {
     class Data : IDataFolderCreator
     {
-        public static string path = Directory.GetCurrentDirectory() + "data";
+        public static string PathData = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "data";
 
         public void CreateDataFolder()
         {
-            
+            Directory.CreateDirectory(PathData);
         }
     }
 }

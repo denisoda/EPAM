@@ -4,8 +4,8 @@ using System.Text;
 
 namespace SolutionBook.Interfaces
 {
-    internal interface IFileSaver<in T>
+    internal interface IFileSaver
     {
-        void SaveToFile(T file);
+        void SaveToFile();
     }
 }
