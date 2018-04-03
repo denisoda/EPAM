@@ -19,6 +19,8 @@ namespace SolutionBook
         private string _publisher;
         private DateTime _publishDate;
         private decimal _price;
+        private string _title;
+
         #endregion
 
         #region Public properties
@@ -55,21 +57,21 @@ namespace SolutionBook
             get => _author;
         }
 
-        public string NameOfBook {
+        public string Title {
 
             private set
             {
                 if (Regex.IsMatch(value, @"^[\D ]*$"))
                 {
-                    _author = value;
+                    _title = value;
                 }
                 else
                 {
-                    throw new ArgumentException($"Is not valid name of {nameof(NameOfBook)}");
+                    throw new ArgumentException($"Is not valid name of {nameof(Title)}");
                 }
             }
 
-            get => _author;
+            get => _title;
         }
 
         public string Publisher
@@ -132,11 +134,11 @@ namespace SolutionBook
 
         #region Constructors
 
-        public Book(string isbn, string author, string name, string publisher, int publishYear, ushort pageNumber, decimal price)
+        public Book(string isbn, string author, string title, string publisher, int publishYear, ushort pageNumber, decimal price)
         {
             Isbn = isbn;
             Author = author;
-            NameOfBook = name;
+            Title = title;
             Publisher = publisher;
             PublishYear = publishYear;
             PageNumber = pageNumber;
@@ -173,6 +175,15 @@ namespace SolutionBook
 
             return this == other;
         }
+
+        #endregion
+
+        #region Overridings
+
+        public override string ToString() =>
+            $"{Title} was written by {Author} in {PublishYear}. Published by '{Publisher}'. Price: {Price:C} ISBN - {Isbn}";
+
+
 
         #endregion
     }

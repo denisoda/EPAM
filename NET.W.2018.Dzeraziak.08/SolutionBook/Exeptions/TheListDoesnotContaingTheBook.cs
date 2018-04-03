@@ -4,13 +4,13 @@ using System.Text;
 
 namespace SolutionBook.Exeptions
 {
-    class BookServiceTheListDoesnotContaingTheBookExeption : Exception
+    class TheListDoesnotContaingTheBookExeption : Exception
     {
         /// <summary>
         /// Throws the exeption if the list does not contain a book
         /// </summary>
         /// <param name="message">Additional message</param>
-        public BookServiceTheListDoesnotContaingTheBookExeption()
+        public TheListDoesnotContaingTheBookExeption()
         {
         }
     }

@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using SolutionBook.Exeptions;
+using SolutionBook.Interfaces;
 
 namespace SolutionBook
 {
-    class BooksListService
+    class BooksListService : IFileSaver<Book>
     {
         #region Private Fields 
 
         private readonly List<Book> _books;
+
+        private IDataFolderCreator dataFolder;
 
         #endregion
 
@@ -44,6 +48,42 @@ namespace SolutionBook
             return _books.Find(tag);
         }
 
+        /// <summary>
+        /// Removes the given object from the list
+        /// <exception cref="TheListDoesnotContaingTheBookExeption">Throws when the list does not contain the given object</exception>
+        /// </summary>
+        /// <param name="book">A book object</param>
+        public void RemoveBook(Book book)
+        {
+            if (book is null)
+                throw new ArgumentNullException($"The {nameof(book)} is null");
+
+            if (_books.Contains(book))
+                _books.Remove(book);
+            else
+            {
+                throw new TheListDoesnotContaingTheBookExeption();
+            }
+        }
+
         #endregion
+
+        public void SaveToFile(Book file)
+        {
+            dataFolder = new Data();
+
+            dataFolder.CreateDataFolder();
+
+            using (BinaryWriter bw = new BinaryWriter(File.Open(Data.path, FileMode.Create)))
+            {
+                //bw.Write(file);
+            }
+        }
+
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace SolutionBook
 {
@@ -18,6 +19,9 @@ namespace SolutionBook
 
             var a = bk.FinBookByAuthor((book1 => book1.PublishYear == 2014));
 
+            Console.WriteLine(book.ToString());
+
+            var dir = Directory.GetCurrentDirectory();
         }
     }
 }
