@@ -4,13 +4,13 @@ using System.Text;
 
 namespace SolutionBook.Exeptions
 {
-    public class BookIsAlredyInTheListExeption : Exception
+    public class BookIsAlredyInTheList : Exception
     {
         /// <summary>
         /// Throws the exeption if the book is alredy in the list
         /// </summary>
         /// <param name="message"></param>
-        public BookIsAlredyInTheListExeption(string message)
+        public BookIsAlredyInTheList(string message)
             : base(message)
         {
 

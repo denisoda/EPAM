@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using SolutionBook.Exeptions;
@@ -9,20 +10,37 @@ namespace SolutionBook
     {
         #region Private Fields 
 
-        private List<Book> books;
+        private readonly List<Book> _books;
 
         #endregion
 
-        public int NumberOfBooks => books.Count;
+        public BooksListService()
+        {
+            _books = new List<Book>();
+        }
 
-        #region Publiu Methods
+        public int NumberOfBooks => _books.Count;
+
+        #region Public Methods
 
         public void AddBook(Book book)
         {
-            if(books.Contains(book))
-                throw new BookIsAlredyInTheListExeption($"The book is alredy in the {nameof(books)} list"); 
+            if(_books.Contains(book))
+                throw new BookIsAlredyInTheList($"The book is alredy in the {nameof(_books)} list"); 
             
-            books.Add(book);
+            _books.Add(book);
+        }
+
+        public Book FinBookByTag(Book book)
+        {
+            if (book is null)
+                throw new NullReferenceException();
+
+            if (_books.Contains(book))
+                return book;                
+            else 
+                throw new 
+            
         }
 
         #endregion
