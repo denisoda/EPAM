@@ -11,6 +11,7 @@ namespace SolutionBook
     /// <summary>
     /// Class represents a Book item
     /// </summary>
+    [Serializable]
     public class Book : IComparer<Book>, IEquatable<Book>
     {
         #region Private fields
