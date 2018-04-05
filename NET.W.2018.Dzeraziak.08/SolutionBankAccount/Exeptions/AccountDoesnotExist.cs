@@ -4,9 +4,9 @@ using System.Text;
 
 namespace SolutonBankAccount.Exeptions
 {
-    class AccountDoesnotExist : Exception
+    public class AccountDoesnotExist : Exception
     {
-        AccountDoesnotExist(string message)
+        public AccountDoesnotExist(string message)
             : base(message)
         {
         }

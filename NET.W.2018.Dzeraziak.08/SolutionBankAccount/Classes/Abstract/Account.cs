@@ -1,4 +1,4 @@
-﻿namespace SolutonBankAccount.Classes
+﻿namespace SolutonBankAccount.Classes.Abstract
 {
     public abstract class Account
     {

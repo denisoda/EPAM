@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SolutonBankAccount.Classes.Abstract;
 using SolutonBankAccount.Exeptions;
 
 namespace SolutonBankAccount.Classes
@@ -9,7 +10,7 @@ namespace SolutonBankAccount.Classes
         public string FName { get; }
         public string SName { get; }
         public decimal BonusBalls { get; }
-        private List<BankAccount> _accounts;
+        private readonly List<BankAccount> _accounts;
 
         #region Constructors
 
@@ -18,6 +19,7 @@ namespace SolutonBankAccount.Classes
             FName = fName;
             SName = sName;
             BonusBalls = bonusBalls;
+            _accounts = new List<BankAccount>();
         }
 
         #endregion
@@ -68,9 +70,7 @@ namespace SolutonBankAccount.Classes
             if(!_accounts.Contains(account))
                 _accounts.Remove(account);
             else
-            {
-                throw 
-            }
+                throw new AccountDoesnotExist($"{account} the account does not exist");
         }
 
         #endregion
