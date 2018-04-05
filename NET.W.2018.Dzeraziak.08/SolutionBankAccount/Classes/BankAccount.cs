@@ -32,10 +32,7 @@ namespace SolutonBankAccount.Classes
         /// <param name="amount">Amount of money to add</param>
         public void AddFunds(decimal amount)
         {
-            if(amount == null)
-                throw new ArgumentNullException();
-
-            if(amount > ballance)
+            if(amount > Ballance)
                 throw new NotEnoughMoneyExeption($"Was threw after the {nameof(AddFunds)} method, because the user does not have enought money on it's account");
             
         }
@@ -46,10 +43,7 @@ namespace SolutonBankAccount.Classes
         /// <param name="amount">Amount of money to withdraw</param>
         public void WithdrawMoney(decimal amount)
         {
-            if (amount == null)
-                throw new ArgumentNullException();
-
-            if (amount > ballance)
+            if (amount > Ballance)
                 throw new NotEnoughMoneyExeption($"Was threw after the {nameof(WithdrawMoney)} method, because the user does not have enought money on it's account");
         }
 
@@ -74,9 +68,5 @@ namespace SolutonBankAccount.Classes
         }
 
         #endregion
-
-        
-
-
     }
 }

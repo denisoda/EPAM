@@ -4,15 +4,15 @@
     {
         #region Private fields
 
-        private string _id;
-        private decimal _ballance;
+        protected string Id;
+        protected decimal Ballance;
 
         #endregion
 
         protected Account(string id, decimal ballance)
         {
-            _id = id;
-            _ballance = ballance;
+            Id = id;
+            Ballance = ballance;
         }
     }
 }
