@@ -60,6 +60,19 @@ namespace SolutonBankAccount.Classes
             _accounts.Add(account);
         }
 
+        public void CloseAccount(BankAccount account)
+        {
+            if (account == null)
+                throw new ArgumentNullException();
+
+            if(!_accounts.Contains(account))
+                _accounts.Remove(account);
+            else
+            {
+                throw 
+            }
+        }
+
         #endregion
 
         
