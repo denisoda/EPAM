@@ -4,7 +4,7 @@ namespace SolutonBankAccount.Enum
     /// <summary>
     /// Rates of account
     /// </summary>
-    enum AccountRate
+    internal enum AccountRate
     {
         Base, Gold, Platinum
     }
