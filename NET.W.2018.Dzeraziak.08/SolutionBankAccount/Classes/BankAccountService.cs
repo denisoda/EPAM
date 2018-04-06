@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.IO;
-using System.Runtime.Serialization;
-using System.Text;
-using SolutonBankAccount.Classes;
-using SolutonBankAccount.NewFolder;
 using System.Runtime.Serialization.Formatters.Binary;
+using SolutonBankAccount.NewFolder;
 
-namespace SolutonBankAccount.Interfaces
+namespace SolutonBankAccount.Classes
 {
     class BankAccountService : IBinarySaver<BankAccount>
     {

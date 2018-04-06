@@ -1,6 +1,5 @@
 ﻿using System;
 using SolutonBankAccount.Classes;
-using SolutonBankAccount.Interfaces;
 
 namespace SolutonBankAccount
 {
