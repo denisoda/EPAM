@@ -14,9 +14,7 @@ namespace SolutonBankAccount.Classes
             using (Stream st = File.Create(ConfigurationManager.AppSettings["BinFolderAccountsLocation"] 
                     + Path.DirectorySeparatorChar + ConfigurationManager.AppSettings["AccountsFileName"]))
             {
-                var formatter = new BinaryFormatter();
-
-                formatter.Serialize(st, file);
+                new BinaryFormatter().Serialize(st, file);
             }
         }
     }
