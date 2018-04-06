@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using SolutonBankAccount.Classes.Abstract;
 using SolutonBankAccount.Exeptions;
 
 namespace SolutonBankAccount.Classes
 {
+    [Serializable]
     public class BankAccount : Account
     {
         public string FName { get; }
         public string SName { get; }
         public decimal BonusBalls { get; }
-        private readonly List<BankAccount> _accounts;
+        public readonly List<BankAccount> Accounts;
 
         #region Constructors
 
@@ -19,7 +21,7 @@ namespace SolutonBankAccount.Classes
             FName = fName;
             SName = sName;
             BonusBalls = bonusBalls;
-            _accounts = new List<BankAccount>();
+            Accounts = new List<BankAccount>();
         }
 
         #endregion
@@ -33,9 +35,9 @@ namespace SolutonBankAccount.Classes
         public void AddFunds(decimal amount)
         {
             if (amount < 0)
-                throw new value
-            else
-                amount += amount;
+                throw new ValueLessThanZero($"{nameof(amount)} can not be less than zero");
+            
+            Ballance += amount;
         }
 
         /// <summary>
@@ -54,7 +56,7 @@ namespace SolutonBankAccount.Classes
             if (account == null)
                 throw new ArgumentNullException();
 
-            _accounts.Add(account);
+            Accounts.Add(account);
         }
 
         public void CloseAccount(BankAccount account)
@@ -62,8 +64,8 @@ namespace SolutonBankAccount.Classes
             if (account == null)
                 throw new ArgumentNullException();
 
-            if(!_accounts.Contains(account))
-                _accounts.Remove(account);
+            if(Accounts.Contains(account))
+                Accounts.Remove(account);
             else
                 throw new AccountDoesnotExist($"{account} the account does not exist");
         }

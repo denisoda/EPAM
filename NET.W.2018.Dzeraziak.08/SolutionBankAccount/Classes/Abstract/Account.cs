@@ -1,5 +1,8 @@
-﻿namespace SolutonBankAccount.Classes.Abstract
+﻿using System;
+
+namespace SolutonBankAccount.Classes.Abstract
 {
+    [Serializable]
     public abstract class Account
     {
         #region Private fields
