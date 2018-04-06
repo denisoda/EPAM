@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.ComponentModel;
 using SolutonBankAccount.Classes.Abstract;
 using SolutonBankAccount.Exeptions;
 using SolutonBankAccount.Enum;
@@ -12,16 +12,20 @@ namespace SolutonBankAccount.Classes
     {
         public string FName { get; }
         public string SName { get; }
-        public decimal BonusBalls { get; }
+        public decimal BonusPoints { get; private set; }
         public readonly List<BankAccount> Accounts;
+        public readonly AccountRate rate;
 
         #region Constructors
 
-        public BankAccount(string id, decimal ballance, string fName, string sName, decimal bonusBalls) : base(id, ballance)
+        public BankAccount(string id, decimal ballance, string fName, string sName, decimal bonusPoints, AccountRate rate) : base(id, ballance)
         {
+            if (!System.Enum.IsDefined(typeof(AccountRate), rate))
+                throw new InvalidEnumArgumentException(nameof(rate), (int) rate, typeof(AccountRate));
             FName = fName;
             SName = sName;
-            BonusBalls = bonusBalls;
+            BonusPoints = bonusPoints;
+            this.rate = rate;
             Accounts = new List<BankAccount>();
         }
 
@@ -33,8 +37,7 @@ namespace SolutonBankAccount.Classes
         /// Adds the money to the accout
         /// </summary>
         /// <param name="amount">Amount of money to add</param>
-        /// <param name="rate">The rate multiplayer</param>
-        public void AddFunds(decimal amount, AccountRate rate)
+        public void AddFunds(decimal amount)
         {
             if (amount < 0)
                 throw new ValueLessThanZero($"{nameof(amount)} can not be less than zero");
@@ -57,6 +60,8 @@ namespace SolutonBankAccount.Classes
         {
             if (account == null)
                 throw new ArgumentNullException();
+
+            account.BonusPoints = 10 * (int) rate;
 
             Accounts.Add(account);
         }
