@@ -1,11 +1,10 @@
-﻿
-namespace SolutonBankAccount.Enum
+﻿namespace SolutonBankAccount.Enum
 {
     /// <summary>
-    /// Rates of account
+    /// Rates of an account
     /// </summary>
-    internal enum AccountRate
+    public enum AccountRate
     {
-        Base, Gold, Platinum
+        Base=1, Gold, Platinum
     }
 }

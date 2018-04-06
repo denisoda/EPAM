@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SolutonBankAccount.Classes.Abstract;
 using SolutonBankAccount.Exeptions;
+using SolutonBankAccount.Enum;
 
 namespace SolutonBankAccount.Classes
 {
@@ -32,12 +33,13 @@ namespace SolutonBankAccount.Classes
         /// Adds the money to the accout
         /// </summary>
         /// <param name="amount">Amount of money to add</param>
-        public void AddFunds(decimal amount)
+        /// <param name="rate">The rate multiplayer</param>
+        public void AddFunds(decimal amount, AccountRate rate)
         {
             if (amount < 0)
                 throw new ValueLessThanZero($"{nameof(amount)} can not be less than zero");
             
-            Ballance += amount;
+            Ballance += amount * (int)rate;
         }
 
         /// <summary>
