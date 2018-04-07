@@ -146,6 +146,17 @@ namespace SolutionBook
             Price = price;
         }
 
+        protected Book(Book book)
+        {
+            Isbn = book.Isbn;
+            Author = book.Author;
+            Title = book.Title;
+            Publisher = book.Publisher;
+            PublishYear = book.PublishYear;
+            PageNumber = book.PageNumber;
+            Price = book.Price;
+        }
+
         #endregion
 
         #region Interface realization
