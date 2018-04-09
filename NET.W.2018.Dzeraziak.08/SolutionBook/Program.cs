@@ -20,7 +20,6 @@ namespace SolutionBook
 
             Console.WriteLine(book.ToString());
 
-            System.Console.WriteLine(book.FormatBook(book.Author, book.Price, book.PageNumber));
         }
     }
 }

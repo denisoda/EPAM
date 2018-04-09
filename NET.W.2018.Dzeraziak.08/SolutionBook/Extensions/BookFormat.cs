@@ -1,7 +1,7 @@
 using System;
 using SolutionBook;
 
-namespace SolutionBook.Exeptions
+namespace SolutionBook.Extensions
 {
     public static class ExtensionBookFormat
     {
@@ -15,7 +15,7 @@ namespace SolutionBook.Exeptions
         {
             string result = "";
 
-            for(int i=0;i<bookParams.Length; i++)
+            for(int i = 0; i < bookParams.Length; i++)
             {
                 result += " " + bookParams[i];
             }
