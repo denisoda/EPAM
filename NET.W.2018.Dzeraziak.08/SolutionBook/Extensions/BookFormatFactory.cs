@@ -1,9 +1,9 @@
 using System;
 using SolutionBook;
 
-namespace SolutionBook.classes
+namespace SolutionBook.Exeptions
 {
-    public static class BookFormatFacttory
+    public static class ExtensionBookFormat
     {
         /// <summary>
         /// Formats the book's object
