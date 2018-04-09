@@ -1,9 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SolutionBook.Exeptions
+﻿namespace SolutionBook.Exceptions
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Throws when price is negative
+    /// </summary>
     public class PriceIsNegativeValueException : Exception
     {
         /// <inheritdoc />
@@ -14,7 +17,6 @@ namespace SolutionBook.Exeptions
         public PriceIsNegativeValueException(string message)
             : base(message)
         {
-
         }
     }
 }

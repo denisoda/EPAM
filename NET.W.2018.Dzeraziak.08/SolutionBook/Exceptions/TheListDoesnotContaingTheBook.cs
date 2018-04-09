@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SolutionBook.Exeptions
+﻿namespace SolutionBook.Exeptions
 {
-    class TheListDoesnotContaingTheBookExeption : Exception
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    public class TheListDoesnotContaingTheBookExeption : Exception
     {
+        /// <inheritdoc />
         /// <summary>
         /// Throws the exeption if the list does not contain a book
         /// </summary>
-        /// <param name="message">Additional message</param>
         public TheListDoesnotContaingTheBookExeption()
         {
         }

@@ -1,13 +1,14 @@
-﻿using System.Text.RegularExpressions;
-using System.Xml;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data;
-using SolutionBook.Exeptions;
-
-namespace SolutionBook
+﻿namespace SolutionBook
 {
+    using System.Text.RegularExpressions;
+    using System.Xml;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Data;
+    using SolutionBook.Exceptions;
+    using SolutionBook.Exeptions;
+
     /// <summary>
     /// Class represents a Book item
     /// </summary>
