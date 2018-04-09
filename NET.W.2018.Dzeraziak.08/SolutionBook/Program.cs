@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using SolutionBook.classes;
+using SolutionBook.Exeptions;
 
 namespace SolutionBook
 {
@@ -20,7 +20,7 @@ namespace SolutionBook
 
             Console.WriteLine(book.ToString());
 
-            System.Console.WriteLine(book.FormatBook(book.Author, book.Price));
+            System.Console.WriteLine(book.FormatBook(book.Author, book.Price, book.PageNumber));
         }
     }
 }
