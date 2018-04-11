@@ -8,6 +8,7 @@ namespace Queue
     public class Queue <T> : IEnumerable
     {
         private List<T> queue;
+
         public Queue()
         {
             queue = new List<T>();
@@ -23,7 +24,7 @@ namespace Queue
         /// </summary>
         public void Dequeue()
         {
-            if(queue.Capacity > 0)
+            if(queue.Count > 0)
                 queue.Remove(queue.First());
             else
             {
@@ -31,10 +32,9 @@ namespace Queue
             }
         }
 
-        IEnumerator GetEnumerator()
+        public IEnumerator GetEnumerator()
         {
-
+            return queue.GetEnumerator();
         }
-
     }
 }
