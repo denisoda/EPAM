@@ -1,13 +1,14 @@
-﻿using System.Text.RegularExpressions;
-using System.Xml;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data;
-using SolutionBook.Exeptions;
-
-namespace SolutionBook
+﻿namespace SolutionBook
 {
+    using System.Text.RegularExpressions;
+    using System.Xml;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Data;
+    using SolutionBook.Exceptions;
+    using SolutionBook.Exeptions;
+
     /// <summary>
     /// Class represents a Book item
     /// </summary>
@@ -144,6 +145,17 @@ namespace SolutionBook
             PublishYear = publishYear;
             PageNumber = pageNumber;
             Price = price;
+        }
+
+        protected Book(Book book)
+        {
+            Isbn = book.Isbn;
+            Author = book.Author;
+            Title = book.Title;
+            Publisher = book.Publisher;
+            PublishYear = book.PublishYear;
+            PageNumber = book.PageNumber;
+            Price = book.Price;
         }
 
         #endregion

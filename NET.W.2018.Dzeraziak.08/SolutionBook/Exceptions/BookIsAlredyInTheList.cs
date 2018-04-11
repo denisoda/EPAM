@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SolutionBook.Exeptions
+﻿namespace SolutionBook.Exeptions
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class BookIsAlredyInTheList : Exception
     {
         /// <summary>
@@ -13,7 +13,6 @@ namespace SolutionBook.Exeptions
         public BookIsAlredyInTheList(string message)
             : base(message)
         {
-
         }
     }
 }
