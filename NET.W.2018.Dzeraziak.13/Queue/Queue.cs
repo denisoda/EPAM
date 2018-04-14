@@ -22,10 +22,17 @@ namespace Queue
         /// <summary>
         /// Dequeue the element
         /// </summary>
-        public void Dequeue()
+        public T Dequeue()
         {
+            
             if(queue.Count > 0)
+            {
+                var temp = queue.First();
+
                 queue.Remove(queue.First());
+                
+                return temp;
+            }
             else
             {
                 throw new ArgumentOutOfRangeException("There is no any element to remove");
