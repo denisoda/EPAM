@@ -10,9 +10,13 @@ namespace ConsoleTest
         {
             var queue = new Queue.Queue<int>();
 
-            queue.Enqueue(1);
+            for(int i = 0; i < 10; i++)
+                    queue.Enqueue(i);
 
-            System.Console.WriteLine(queue.Dequeue());
+            foreach (var item in queue)
+            {
+                System.Console.WriteLine(item);
+            }
         }
     }
 }
