@@ -2,10 +2,20 @@
 
 namespace Stopwatch
 {
-    public class Stopwatch
+    public class Timer
     {
-        public event TimeEnd; 
+        public event EventHandler OnTimeEndEvent; 
+        
+        public void Start()
+        {
+            //Timer begins execution
+        }
 
-        Stopwatch timer = new Stopwatch();
+        public void End()
+        {
+        //Timer ends exution
+            if(OnTimeEndEvent != null)
+                OnTimeEndEvent(this, EventArgs.Empty);
+        }
     }
 }
