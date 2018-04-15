@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using SolutionBook.Exeptions;
+using Fibo;
+using System.Collections;
 
 namespace SolutionBook
 {
@@ -20,6 +22,12 @@ namespace SolutionBook
 
             Console.WriteLine(book.ToString());
 
+            IEnumerable fibo = Fibo.Fibo.Generate(10);
+
+            foreach (var item in fibo)
+            {
+                System.Console.WriteLine(item);
+            }
         }
     }
 }
