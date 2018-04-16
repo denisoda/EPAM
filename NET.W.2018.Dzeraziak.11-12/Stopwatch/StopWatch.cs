@@ -1,21 +1,31 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Timers;
 
-namespace Stopwatch
+namespace Dzeraziak.Stopwatch
 {
-    public class Timer
+    public class Watch
     {
-        public event EventHandler OnTimeEndEvent; 
-        
-        public void Start()
+        private Timer timer;
+        public event EventHandler TimeElapset;
+
+        public Watch()
         {
-            //Timer begins execution
+        }
+        /// <summary>
+        /// Invokes the timer and rises an event afrer reaching the predefined time
+        /// </summary>
+        /// <param name="seconds">Numer to seconds to countdown</param>
+        public void StartTimer(double seconds)
+        {
+            timer = new Timer(seconds);
+
+            timer.Elapsed += new ElapsedEventHandler(onElpaset);
         }
 
-        public void End()
+        private void onElpaset(object sender, ElapsedEventArgs a)
         {
-        //Timer ends exution
-            if(OnTimeEndEvent != null)
-                OnTimeEndEvent(this, EventArgs.Empty);
+            TimeElapset(this, EventArgs.Empty);
         }
     }
 }
