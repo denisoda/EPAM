@@ -1,5 +1,5 @@
 ﻿using System;
-using Stopwatch;
+using Dzeraziak.Stopwatch;
 
 namespace Test
 {
@@ -7,16 +7,12 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            Adder a = new Adder();
-
-            a.OnMultiple += Do;
-
-            a.add(1, 5);
+            var watch = new Watch(4);
         }
 
-        static void Do(object sender, EventArgs e)
+        public static void Elapsed(object sender, EventArgs e)
         {
-            System.Console.WriteLine("Doing..");
+            System.Console.WriteLine("Elapsed");
         }
     }
     public class Adder
