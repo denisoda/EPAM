@@ -1,4 +1,7 @@
-﻿namespace SolutionBook
+﻿#define Log
+using NLog;
+
+namespace SolutionBook
 {
     using System.Text.RegularExpressions;
     using System.Xml;
@@ -16,6 +19,8 @@
     public class Book : IComparer<Book>, IEquatable<Book>
     {
         #region Private fields
+
+        private readonly ILogger _logger;
         private string _isbn;
         private string _author;
         private string _publisher;
@@ -37,6 +42,7 @@
                 }
                 else
                 {
+                    _logger.Error($"ValidationException from {nameof(Isbn)} property {nameof(Book)} class");
                     throw new ValidationException($"Is not valid {nameof(Isbn)}");
                 }
             }
@@ -53,6 +59,7 @@
                 }
                 else
                 {
+                    _logger.Error($"ArgumentException from {nameof(Author)} property {nameof(Book)} class");
                     throw new ArgumentException($"Is not valid name of{nameof(Author)}");
                 }
             }
@@ -69,6 +76,7 @@
                 }
                 else
                 {
+                    _logger.Error($"ArgumentException from {nameof(Title)} property {nameof(Book)} class");
                     throw new ArgumentException($"Is not valid name of {nameof(Title)}");
                 }
             }
@@ -86,6 +94,7 @@
                 }
                 else
                 {
+                    _logger.Error($"ArgumentException from {nameof(Publisher)} property {nameof(Book)} class");
                     throw new ArgumentException($"Is not valid name of {nameof(Publisher)}");
                 }
             }
@@ -99,11 +108,13 @@
             {
                 if (value < DateTime.MinValue.Year)
                 {
+                    _logger.Error($"ArgumentException from {nameof(PublishYear)} property {nameof(Book)} class : {{nameof(PublishYear)}}\'s value above the maximum possible");
                     throw new ArgumentException($"{nameof(PublishYear)}'s value below the maximum possible");
                 }
 
                 if (value > DateTime.MaxValue.Year)
                 {
+                    _logger.Error($"ArgumentException from {nameof(PublishYear)} property {nameof(Book)} class : {{nameof(PublishYear)}}\'s value above the maximum possible");
                     throw new ArgumentException($"{nameof(PublishYear)}'s value above the maximum possible");
                 }
 
@@ -121,6 +132,7 @@
             {
                 if (value < 0)
                 {
+                    _logger.Error($"{nameof(Price)} can not be less than zero");
                     throw new PriceIsNegativeValueException($"{nameof(Price)} can not be less than zero");
                 }
                 else
@@ -136,7 +148,7 @@
 
         #region Constructors
 
-        public Book(string isbn, string author, string title, string publisher, int publishYear, ushort pageNumber, decimal price)
+        public Book(string isbn, string author, string title, string publisher, int publishYear, ushort pageNumber, decimal price, ILogger logger)
         {
             Isbn = isbn;
             Author = author;
@@ -145,10 +157,14 @@
             PublishYear = publishYear;
             PageNumber = pageNumber;
             Price = price;
+            _logger = logger;
+
+            _logger.Log(LogLevel.Info, "Book constructor has been invoked");
         }
 
-        protected Book(Book book)
+        protected Book(Book book, ILogger logger)
         {
+            _logger = logger;
             Isbn = book.Isbn;
             Author = book.Author;
             Title = book.Title;
@@ -156,6 +172,8 @@
             PublishYear = book.PublishYear;
             PageNumber = book.PageNumber;
             Price = book.Price;
+
+            _logger.Log(LogLevel.Info, "Book copy constructor has been invoked");
         }
 
         #endregion
@@ -170,8 +188,11 @@
         /// <returns>1 if the price of the first book is bigger that second one</returns>
         public int Compare(Book x, Book y)
         {
-            if(x is null || y is null)
+            if (x is null || y is null)
+            {
+                _logger.Fatal($"NullReferenceException from {nameof(Compare)} {nameof(Book)} class");
                 throw new NullReferenceException();
+            }
 
             return x.Price > y.Price ? 1 : 0;
         }
@@ -184,7 +205,10 @@
         public bool Equals(Book other)
         {
             if (other is null)
+            {
+                _logger.Fatal($"NullReferenceException from {nameof(Equals)} {nameof(Book)} class");
                 throw new NullReferenceException();
+            }
 
             return Title.Equals(other.Title) && Isbn.Equals(other.Isbn) && Author.Equals(other.Author) && PublishYear.Equals(other.PublishYear)
                 && PageNumber.Equals(other.PageNumber) && Price.Equals(other.Price);

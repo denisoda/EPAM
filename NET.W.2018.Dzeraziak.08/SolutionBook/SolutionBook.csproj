@@ -9,4 +9,8 @@
     <LangVersion>Default</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="4.5.3" />
+  </ItemGroup>
+
 </Project>

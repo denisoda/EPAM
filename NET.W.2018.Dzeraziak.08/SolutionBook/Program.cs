@@ -2,6 +2,9 @@
 using System.IO;
 using SolutionBook.Exeptions;
 using System.Collections;
+using NLog;
+using NLog.Common;
+using NLog.Config;
 
 namespace SolutionBook
 {
@@ -9,6 +12,8 @@ namespace SolutionBook
     {
         static void Main(string[] args)
         {
+            LogManager.Configuration = new XmlLoggingConfiguration($"Log{Path.DirectorySeparatorChar}Config{Path.DirectorySeparatorChar}NLog.config");
+
             var book = new Book("9783161484100", "Ilya Dzeraziak", "C# in a nutshell", "Orelly", 2014, 900, 60);
             var bookOther = new Book("9783161484101", "Ilya Dzeraziak", "C# in a nutshell", "Orelly", 2014, 900, 60);
 
@@ -18,6 +23,7 @@ namespace SolutionBook
             bk.AddBook(bookOther);
 
             var a = bk.FinBookByAuthor((book1 => book1.PublishYear == 2014));
+
 
             Console.WriteLine(book.ToString());
         }
