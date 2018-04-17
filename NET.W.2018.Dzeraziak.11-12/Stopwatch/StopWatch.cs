@@ -6,26 +6,22 @@ namespace Dzeraziak.Stopwatch
 {
     public class Watch
     {
-        private Timer timer;
-        public event ElapsedEventHandler TimeElapset;
-
+        private readonly Timer _timer;
+        public event ElapsedEventHandler TimeElapset = _timer.Elapsed;
 
         public Watch(double seconds)
         {
-            timer = new Timer(seconds);
-
-            timer.Elapsed += onElpaset;
+            Console.WriteLine("Created");
+            _timer = new Timer(seconds);
         }
+
         /// <summary>
         /// Invokes the timer and rises an event afrer reaching the predefined time
         /// </summary>
-        /// <param name="seconds">Numer to seconds to countdown</param>
-        
-
-        private void onElpaset(object sender, ElapsedEventArgs a)
+        private void OnElpaset(object sender, ElapsedEventArgs a)
         {
             System.Console.WriteLine("Iner elapsed");
-            TimeElapset(this, a);
+            TimeElapset?.Invoke(this, a);
         }
     }
 }
