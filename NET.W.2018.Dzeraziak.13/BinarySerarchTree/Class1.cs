@@ -8,6 +8,8 @@ namespace BinarySearchTree
 {
     public class BinarySearchTree
     {
+        private IComparer<int> intComperer;
+
         private class Node
         {
             public int value;

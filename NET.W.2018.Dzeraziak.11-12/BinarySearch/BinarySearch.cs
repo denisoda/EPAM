@@ -2,19 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace BinarySearch 
+namespace BinarySearch
 {
-    public class BinarySearch <T> 
+    public class BinarySearch<T>
     {
         /// <summary>
         /// An emplementation of a binary sort
         /// </summary>
-        /// <param name="searchArr">array for search</param>
-        /// <param name="element">element for search</param>
         /// <returns>Searched element</returns>
         public static void Search<T>(T[] array, T searchFor, Comparer<T> comparer)
         {
-
             int high, low, mid;
             high = array.Length - 1;
             low = 0;
@@ -39,8 +36,8 @@ namespace BinarySearch
                         else
                             low = mid + 1;
                     }
-
                 }
+
                 if (low > high)
                 {
                     Console.WriteLine("Value Not Found In the Collection");
