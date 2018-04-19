@@ -3,7 +3,7 @@
 namespace Matrix
 {
     /// <summary>
-    /// generics class contains main information about diagonal matrix
+    /// generic class contains main information about diagonal matrix
     /// </summary>
     /// <typeparam name="T">Type which closes class</typeparam>
     public class DiagonalMatrix<T> : Matrix<T>

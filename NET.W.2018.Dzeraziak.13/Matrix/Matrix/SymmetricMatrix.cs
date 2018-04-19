@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Task4
+namespace Matrix
 {
     /// <summary>
     /// generic class contains main information about symmetric matrix
@@ -54,6 +50,7 @@ namespace Task4
             return true;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Method starts after event running.
         /// </summary>
