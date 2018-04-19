@@ -10,39 +10,33 @@ namespace BinarySearch
         /// An emplementation of a binary sort
         /// </summary>
         /// <returns>Searched element</returns>
-        public static T Search<T>(T[] array, T searchFor, Comparer comparer)
+        public static bool Search<T>(T[] array, T searchFor, Comparer comparer)
         {
-            int high = array.Length - 1;
-            int low = 0;
-            if (array[low].Equals(searchFor))
-                return array[low];
-            else if (array[high].Equals(searchFor))
-                return array[high];
+            uint high = (uint)array.Length - 1;
+            uint low = 0;
+            uint mid = high >> 1;
+
+            if (array[low].Equals(searchFor)) return true;
+            else if (array[high].Equals(searchFor)) return true;
+
             else
             {
-                while (low <= high)
+                while (high >= low)
                 {
-                    var mid = (high + low) / 2;
-                    if (comparer.Compare(array[mid], searchFor) == 0)
-                    {
-                        return array[mid];
-                    }
-                    else
-                    {
-                        if (comparer.Compare(searchFor, array[mid]) > 0)
-                            high = mid + 1;
-                        else
-                            low = mid + 1;
-                    }
-                }
+                    int compResult = comparer.Compare(array[mid], searchFor);
 
-                if (low > high)
-                {
-                    throw new ArgumentException("value is not found!");
+                    if (compResult == 0)
+                        return true;
+                    else if (compResult > 0)
+                            high = mid + 1;
+                    else
+                            low = mid + 1;
+
+                    mid = (low + high) >> 1;
                 }
             }
 
-            return array[0];
+            return false;
         }
     }
 }
