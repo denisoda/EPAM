@@ -16,7 +16,6 @@ namespace SolutonBankAccount.Classes
         public string SName { get; }
         public decimal BonusPoints { get; private set; }
         private IBankAccountService _service;                
-        public readonly List<BankAccount> Accounts;
         public readonly AccountRate rate;
 
         #region Constructors
@@ -30,6 +29,7 @@ namespace SolutonBankAccount.Classes
             BonusPoints = bonusPoints;
             this.rate = rate;
             _service = service;
+            service.AddAccount(this);
         }
 
         #endregion

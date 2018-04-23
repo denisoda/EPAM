@@ -12,18 +12,17 @@ namespace SolutonBankAccount.Classes.Services
 {
     class BankAccountService : IBankAccountService
     {
-        private IDataSaver _saver;
+        
         private List<Account> accounts;
 
         BankAccountService(IDataSaver saver)
         {
-            _saver = saver;
             accounts = new List<Account>();
         }
 
-        public void save(IEnumerable data)
+        public void SaveData(IDataSaver data)
         {
-            _saver.Save(data);
+            data.Save(accounts);
         }
 
         public void AddAccount(Account account)
