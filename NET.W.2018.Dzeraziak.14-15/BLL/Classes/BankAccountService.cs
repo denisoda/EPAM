@@ -1,20 +1,24 @@
 ﻿using System.Configuration;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using DataSaverService.Interfaces;
 using System.Collections;
+using DAL.Intefaces;
 
 namespace SolutonBankAccount.Classes
 {
     class BankAccountService
     {
-        private IDataSaver<BankAccount> _saver;
+        private IDataSaver _saver;
         
-        BankAccountService(IBinarySaver<BankAccount> saver)
+        BankAccountService(IDataSaver saver)
         {
             _saver = saver;
         }
-        
-        _saver.save(IEnumerable data);
+
+        public void save(IEnumerable data)
+        {
+            _saver.Save(data);
+        }
+
     }
 }
