@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ninject" Version="3.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BL">
+      <HintPath>..\..\..\BLL\bin\Debug\netstandard2.0\BL.dll</HintPath>
+    </Reference>
+    <Reference Include="DAL">
+      <HintPath>..\..\..\DAL\bin\Debug\netstandard2.0\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SolutonBankAccount">
+      <HintPath>..\..\..\BLL\bin\Debug\netcoreapp2.0\SolutonBankAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
