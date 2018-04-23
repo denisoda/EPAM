@@ -15,10 +15,14 @@ namespace SolutonBankAccount.Classes.Services
         
         private List<Account> accounts;
 
+        #region Consturctor
+
         BankAccountService(IDataSaver saver)
         {
             accounts = new List<Account>();
         }
+
+        #endregion
 
         public void SaveData(IDataSaver data)
         {
