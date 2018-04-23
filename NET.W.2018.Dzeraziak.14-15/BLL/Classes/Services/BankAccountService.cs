@@ -39,6 +39,11 @@ namespace SolutonBankAccount.Classes.Services
 
         }
 
+        public Account GetFirstAccount()
+        {
+            return _accounts[0];
+        }
+
         public bool IsContainsAccount(Account account)
         {
             if(account == null)
