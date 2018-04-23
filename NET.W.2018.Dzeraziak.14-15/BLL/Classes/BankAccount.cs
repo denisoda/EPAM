@@ -4,6 +4,8 @@ using System.ComponentModel;
 using SolutonBankAccount.Classes.Abstract;
 using SolutonBankAccount.Exeptions;
 using SolutonBankAccount.Enum;
+using SolutonBankAccount.Classes.Services;
+using BLL.Interfaces;
 
 namespace SolutonBankAccount.Classes
 {
@@ -13,12 +15,13 @@ namespace SolutonBankAccount.Classes
         public string FName { get; }
         public string SName { get; }
         public decimal BonusPoints { get; private set; }
+        private IBankAccountService _service;                
         public readonly List<BankAccount> Accounts;
         public readonly AccountRate rate;
 
         #region Constructors
 
-        public BankAccount(string id, decimal ballance, string fName, string sName, decimal bonusPoints, AccountRate rate) : base(id, ballance)
+        public BankAccount(string id, decimal ballance, string fName, string sName, decimal bonusPoints, AccountRate rate, IBankAccountService service) : base(id, ballance)
         {
             if (!System.Enum.IsDefined(typeof(AccountRate), rate))
                 throw new InvalidEnumArgumentException(nameof(rate), (int) rate, typeof(AccountRate));
@@ -26,7 +29,7 @@ namespace SolutonBankAccount.Classes
             SName = sName;
             BonusPoints = bonusPoints;
             this.rate = rate;
-            Accounts = new List<BankAccount>();
+            _service = service;
         }
 
         #endregion
@@ -63,7 +66,7 @@ namespace SolutonBankAccount.Classes
 
             account.BonusPoints = 10 * (int) rate;
 
-            Accounts.Add(account);
+            _service.AddAccount(account);
         }
 
         public void CloseAccount(BankAccount account)
@@ -71,8 +74,8 @@ namespace SolutonBankAccount.Classes
             if (account == null)
                 throw new ArgumentNullException();
 
-            if(Accounts.Contains(account))
-                Accounts.Remove(account);
+            if(_service.IsContainsAccount(account))
+                _service.RemoveAccount(account);
             else
                 throw new AccountDoesnotExist($"{account} the account does not exist");
         }
