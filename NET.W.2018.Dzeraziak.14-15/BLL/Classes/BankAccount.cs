@@ -12,11 +12,15 @@ namespace SolutonBankAccount.Classes
     [Serializable]
     public class BankAccount : Account
     {
+        #region Properties
+
         public string FName { get; }
         public string SName { get; }
         public decimal BonusPoints { get; private set; }
         private IBankAccountService _service;                
         public readonly AccountRate rate;
+
+        #endregion
 
         #region Constructors
 

@@ -10,28 +10,28 @@ using SolutonBankAccount.Classes.Abstract;
 
 namespace SolutonBankAccount.Classes.Services
 {
-    class BankAccountService : IBankAccountService
+    public class BankAccountService : IBankAccountService
     {
         
-        private List<Account> accounts;
+        private readonly List<Account> _accounts;
 
         #region Consturctor
 
-        BankAccountService(IDataSaver saver)
+        private BankAccountService(IDataSaver saver)
         {
-            accounts = new List<Account>();
+            _accounts = new List<Account>();
         }
 
         #endregion
 
         public void SaveData(IDataSaver data)
         {
-            data.Save(accounts);
+            data.Save(_accounts);
         }
 
         public void AddAccount(Account account)
         {
-            accounts.Add(account);
+            _accounts.Add(account);
         }
 
         public void RemoveAccount(Account account)
@@ -39,12 +39,17 @@ namespace SolutonBankAccount.Classes.Services
 
         }
 
+        public Account GetFirstAccount()
+        {
+            return _accounts[0];
+        }
+
         public bool IsContainsAccount(Account account)
         {
             if(account == null)
                 throw new NullReferenceException();
             
-            return accounts.Contains(account);
+            return _accounts.Contains(account);
         }
     }
 }
