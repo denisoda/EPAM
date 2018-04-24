@@ -16,17 +16,18 @@ namespace BLL.UnitTest
     class Test
     {
         [Test]
-        [TestCase]
-        public void test(string id, decimal ballance, string fname, string sname)
+        [TestCase("10", 0, "Ilya", "Dzeraziak", 100)]
+        public void CreateAccount_NewBankAccount_HasAddedsuccessfully(string id, decimal ballance, string fname, string sname, decimal bonusPoints)
         {
             Mock<IBankAccountService> mockBankService = new Mock<IBankAccountService>();
-
+            
+            int mockCallback = 0;
+            
             mockBankService
-                .Setup(m => m.AddAccount(It.IsAny<BankAccount>()));
-
-            Account ba = new BankAccount(id, ballance, fname, sname, AccountRate.Base, mockBankService.Object);
-
-            Assert.AreEqual(mockBankService.)
+                .Setup(m => m.AddAccount(It.IsAny<BankAccount>()))
+                .Callback(() => mockCallback++);
+            
+            Assert.AreEqual(mockCallback, 1);
         }
     }
 }

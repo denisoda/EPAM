@@ -7,12 +7,12 @@ namespace SolutonBankAccount.Classes.Abstract
     {
         #region Private fields
 
-        protected string Id;
-        protected decimal Ballance;
+        public readonly string Id;
+        public decimal Ballance {protected set; get;}
 
         #endregion
 
-        protected Account(string id, decimal ballance)
+        protected Account(string id, decimal ballance = 0)
         {
             Id = id;
             Ballance = ballance;
