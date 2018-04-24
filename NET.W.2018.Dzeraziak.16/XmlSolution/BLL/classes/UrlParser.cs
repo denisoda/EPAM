@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Xml;
+using BLL.classes;
 
 namespace BLL
 {
@@ -12,7 +13,5 @@ namespace BLL
         {
             _data = dataProvider.GetData();
         }
-
-        
     }
 }

@@ -8,7 +8,7 @@ namespace BLL.classes
     {
         private static string htmlRegexPattern = @"(^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$)*";
 
-        public static bool IsValidHtml(string data)
+        public static bool IsValidUrl(string data)
         {
             if(data == null)
                 throw new ArgumentNullException("data is null");
