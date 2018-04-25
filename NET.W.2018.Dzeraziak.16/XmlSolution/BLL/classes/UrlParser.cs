@@ -1,17 +1,27 @@
 ﻿using System;
 using System.Xml;
 using BLL.classes;
+using BLL.classes.abstracts;
+using BLL.interfaces;
 
 namespace BLL
 {
-    public class UrlParser
+    public class UrlXmlParser : ParserBase<string> 
     {
-        IDataProvider<string> _dataProvider;
         readonly string _data;
+        readonly XmlDocument document;
 
-        UrlParser(IDataProvider<string> dataProvider)
+        public UrlXmlParser(IDataProvider<string> dataProvider) : base(dataProvider)
         {
-            _data = dataProvider.GetData();
+            if(DataValidator.IsValidUrl(dataProvider.GetData()))
+                _data = dataProvider.GetData();
+            else    
+                throw new ArgumentException("is not valid url");
+        }
+
+        public override void Parse()
+        {
+            document.CreateElement()
         }
     }
 }
