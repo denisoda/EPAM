@@ -11,7 +11,5 @@ namespace BLL.classes.abstracts
         {
             _dataProvider = dataProvider;
         }
-
-        public abstract void Parse();
     }
 }
