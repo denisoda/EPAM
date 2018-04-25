@@ -24,16 +24,17 @@ namespace BLL
         public void GenerateXml(string name = "Urls.xml", string path = "")
         {
 
-            using(XmlWriter xw = XmlWriter.Create(path + name))
+            using(XmlWriter xmlWriter = XmlWriter.Create(path + name))
             {
-                xw.WriteStartDocument();
-                xw.WriteStartElement("UrlAddresses");
+                xmlWriter.WriteStartDocument();
+                xmlWriter.WriteStartElement("UrlAddresses");
 
                 foreach(var url in _url)
                 {
-                    xw.WriteStartElement("UrlAdress");
+                    xmlWriter.WriteStartElement("UrlAdress");
 
-                    xw.WriteElementString("host name", url);
+                    xmlWriter.WriteElementString("host name", url); // add the regular expression for determinating the host name
+                    xmlWriter.WriteAttributeString("segment", url); // add the regular expression for determonatong the segment name
                 }
             }
         }
