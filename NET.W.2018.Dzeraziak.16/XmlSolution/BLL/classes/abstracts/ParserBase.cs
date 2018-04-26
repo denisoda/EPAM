@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using BLL.interfaces;
+using DAL.Interface;
 
 namespace BLL.classes.abstracts
 {

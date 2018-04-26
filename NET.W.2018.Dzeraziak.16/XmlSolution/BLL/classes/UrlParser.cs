@@ -2,14 +2,14 @@
 using System.Xml;
 using BLL.classes;
 using BLL.classes.abstracts;
-using BLL.interfaces;
+using DAL.Interface;
 
 namespace BLL
 {
     public class UrlXmlParser : ParserBase<string> 
     {
-        readonly string[] _url;
-        readonly XmlDocument document;
+        private readonly string[] _url;
+        private readonly XmlDocument _document;
 
         public UrlXmlParser(IDataProvider<string> dataProvider) : base(dataProvider)
         {
@@ -18,13 +18,13 @@ namespace BLL
             else    
                 throw new ArgumentException("is not valid url");
             
-            document = new XmlDocument();
+            _document = new XmlDocument();
         }
 
         public void GenerateXml(string name = "Urls.xml", string path = "")
         {
 
-            using(XmlWriter xmlWriter = XmlWriter.Create(path + name))
+            using(var xmlWriter = XmlWriter.Create(path + name))
             {
                 xmlWriter.WriteStartDocument();
                 xmlWriter.WriteStartElement("UrlAddresses");

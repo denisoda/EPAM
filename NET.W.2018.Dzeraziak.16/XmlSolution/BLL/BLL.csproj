@@ -4,4 +4,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DAL">
+      <HintPath>..\DAL\bin\Debug\netstandard2.0\DAL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
