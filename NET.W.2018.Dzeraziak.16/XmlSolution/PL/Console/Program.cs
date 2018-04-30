@@ -18,15 +18,18 @@ namespace PL.Console
 
         static void Main(string[] args)
         {
+            Program p = new Program();
+            
+            p.OutputParserResult();
         }
 
-        public void outputParserResult()
+        public void OutputParserResult()
         {
             var data = this.kernel.Get<IDataProvider<string>>();
 
             var urlParser = new UrlXmlParser(data);
             
-            urlParser.GenerateXml();
+            System.Console.WriteLine(urlParser.GenerateXml());
         } 
     }
 }
