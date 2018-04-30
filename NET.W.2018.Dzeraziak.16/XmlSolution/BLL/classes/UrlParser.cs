@@ -25,7 +25,7 @@ namespace BLL
             _document = new XmlDocument();
         }
 
-        public void GenerateXml(string name = "Urls.xml", string path = "")
+        public XElement GenerateXml()
         {
                 var _document = new XDocument(new XDeclaration("1.0", "UTF-8", "yes"));
                 XElement urlsTree = new XElement("urlAddresses",
@@ -43,7 +43,7 @@ namespace BLL
                                 )
                                 )))));
                 
-                System.Console.WriteLine(urlsTree);
+                return urlsTree;
             }
         }
     }
