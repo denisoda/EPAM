@@ -1,4 +1,6 @@
 ﻿using System;
+using BLL;
+using DAL.Model;
 
 namespace PL.Console
 {
@@ -6,23 +8,12 @@ namespace PL.Console
     {
         static void Main(string[] args)
         {
-                System.Console.WriteLine("Hello World");
-                System.Console.ReadLine();
-                Test(new Crash());
-        }
+            var data = new Data(
+                "https://github.com/AnzhelikaKravchuk?tab=repositories https://github.com/AnzhelikaKravchuk/2017-2018.MMF.BSU https://habrahabr.ru/company/it-grad/blog/341486/");
 
-        public static void Test(Crash crash)
-        {
-            crash.Run();
-        }
-
-    }
-
-    public class Crash
-    {
-        public void Run()
-        {
-            throw new NotImplementedException();
-        }
+            var urlParser = new UrlXmlParser(data);   
+            
+            urlParser.GenerateXml();
+        } 
     }
 }
