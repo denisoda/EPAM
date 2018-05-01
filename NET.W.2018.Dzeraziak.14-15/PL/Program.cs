@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Context;
+using System;
 
 namespace PL
 {
@@ -6,7 +7,6 @@ namespace PL
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
         }
     }
 }
