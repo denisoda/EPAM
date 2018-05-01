@@ -4,6 +4,7 @@ using DAL.Model;
 using DependecyRes;
 using Ninject;
 using DAL.Interface;
+using NLog;
 
 namespace PL.Console
 {
@@ -19,15 +20,16 @@ namespace PL.Console
         static void Main(string[] args)
         {
             Program p = new Program();
-            
+
             p.OutputParserResult();
         }
 
         public void OutputParserResult()
         {
             var data = this.kernel.Get<IDataProvider<string>>();
+            var logger = NLog.LogManager.GetCurrentClassLogger();
 
-            var urlParser = new UrlXmlParser(data);
+            var urlParser = new UrlXmlParser(data, logger);
             
             System.Console.WriteLine(urlParser.GenerateXml());
         } 

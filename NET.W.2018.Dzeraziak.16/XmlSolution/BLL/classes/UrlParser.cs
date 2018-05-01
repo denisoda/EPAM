@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using NLog;
 
 namespace BLL
 {
@@ -14,15 +15,21 @@ namespace BLL
     {
         private readonly string[] _url;
         private readonly XmlDocument _document;
+        private readonly ILogger _logger;
 
-        public UrlXmlParser(IDataProvider<string> dataProvider) : base(dataProvider)
+        public UrlXmlParser(IDataProvider<string> dataProvider, ILogger logger) : base(dataProvider)
         {
+            _logger = logger;
+
             if(DataValidator.IsValidUrl(dataProvider.GetData()))
                 _url = dataProvider.GetData().Split(' ');
-            else    
+            else
+            {    
+                _logger.Error("In a UrlXmlParser constructor the url provided was not valid");    
                 throw new ArgumentException("is not valid url");
+            }
             
-            _document = new XmlDocument();
+            _document = new XmlDocument(); 
         }
 
         public XElement GenerateXml()

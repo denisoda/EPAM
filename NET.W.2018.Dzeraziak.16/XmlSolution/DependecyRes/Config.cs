@@ -3,6 +3,7 @@ using Ninject;
 using DAL.Interface;
 using DAL.Model;
 
+
 namespace DependecyRes
 {
     public class NinjectConfig

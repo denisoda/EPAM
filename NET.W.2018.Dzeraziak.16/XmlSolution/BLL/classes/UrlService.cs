@@ -8,5 +8,5 @@ namespace BLL.classes
 {
     public static class UrlService
     {
-        }
+    }
 }
