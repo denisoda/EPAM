@@ -43,7 +43,7 @@ namespace BLL
                                 new XElement("host", 
                                     new XAttribute("name", _urlService.GetDomain(a)),
                                 new XElement("uri",
-                                    new XElement("segment", _urlService.GetSegment(a)), // add a var name into the scope
+                                    new XElement("segment", _urlService.GetSegment(a)), 
                                 new XElement("parameters",
                                     new XElement("parametr",
                                         new XAttribute("value", "repositories"), 
