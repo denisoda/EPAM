@@ -6,7 +6,28 @@ using System.Linq;
 
 namespace BLL.classes
 {
-    public static class UrlService
+    public class UrlService
     {
+        private Uri uri;
+
+        public string GetDomain(string url)
+        {
+            uri = new Uri(url);
+            
+            return uri.Host;
+        }
+
+        public string GetSegment(string url)
+        {
+            uri = new Uri(url);
+            
+            return uri.Segments[1];
+        }
+        public string GetQuery(string url)
+        {
+            uri = new Uri(url);
+            
+            return uri.Query;
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace BLL
         private readonly string[] _url;
         private readonly XmlDocument _document;
         private readonly ILogger _logger;
+        private readonly UrlService _urlService = new UrlService();
 
         public UrlXmlParser(IDataProvider<string> dataProvider, ILogger logger) : base(dataProvider)
         {
@@ -28,7 +29,7 @@ namespace BLL
                 _logger.Error("In a UrlXmlParser constructor the url provided was not valid");    
                 throw new ArgumentException("is not valid url");
             }
-            
+
             _document = new XmlDocument(); 
         }
 
@@ -40,13 +41,13 @@ namespace BLL
                                 select
                             new XElement("urlAddress",
                                 new XElement("host", 
-                                    new XAttribute("name", a.First()),
+                                    new XAttribute("name", _urlService.GetDomain(a)),
                                 new XElement("uri",
-                                    new XElement("segment", "name"), // add a var name into the scope
+                                    new XElement("segment", _urlService.GetSegment(a)), // add a var name into the scope
                                 new XElement("parameters",
                                     new XElement("parametr",
-                                        new XAttribute("value", "value"), // add the real value
-                                        new XAttribute("key", "key") // add the real key
+                                        new XAttribute("value", "repositories"), 
+                                        new XAttribute("key", "tab") 
                                 )
                                 )))));
                 
