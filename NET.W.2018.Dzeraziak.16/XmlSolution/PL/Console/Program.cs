@@ -27,7 +27,7 @@ namespace PL.Console
         public void OutputParserResult()
         {
             var data = this.kernel.Get<IDataProvider<string>>();
-            var logger = NLog.LogManager.GetCurrentClassLogger();
+            var logger = this.kernel.Get<ILogger>();
 
             var urlParser = new UrlXmlParser(data, logger);
             
