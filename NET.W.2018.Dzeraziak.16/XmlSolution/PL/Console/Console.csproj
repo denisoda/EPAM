@@ -1,17 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\BLL\BLL.csproj" />
+    <ProjectReference Include="..\..\DependecyRes\DependecyRes.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ninject" Version="3.3.4" />
+    <PackageReference Include="NLog" Version="4.5.3" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Reference Include="BLL">
-      <HintPath>..\..\BLL\bin\Debug\netstandard2.0\BLL.dll</HintPath>
-    </Reference>
-    <Reference Include="DAL">
-      <HintPath>..\..\DAL\bin\Debug\netstandard2.0\DAL.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
