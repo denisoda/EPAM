@@ -5,4 +5,17 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DataLL">
+      <HintPath>..\DataLL\bin\Debug\DataLL.dll</HintPath>
+    </Reference>
+    <Reference Include="SolutonBankAccount">
+      <HintPath>..\BLL\bin\Debug\netcoreapp2.0\SolutonBankAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
