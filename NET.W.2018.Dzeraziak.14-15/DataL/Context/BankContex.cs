@@ -2,7 +2,6 @@
 using System.Data.Entity;
 using DAL;
 using MySql.Data.Entity;
-using SolutonBankAccount.Classes;
 
 namespace DataLL.Context
 {
