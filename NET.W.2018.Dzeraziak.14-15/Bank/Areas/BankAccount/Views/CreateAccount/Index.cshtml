@@ -1,0 +1,17 @@
+﻿@model Bank.Areas.BankAccount.CreateAccountController.AccountModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "CreateAccount", FormMethod.Post))
+{
+    @Html.TextBoxFor(s => s.FName);
+    @Html.TextBoxFor(s => s.SName);
+    @Html.TextBoxFor(s => s.Ballance);
+    @Html.TextBoxFor(s => s.BonusPoins);
+
+    <input type="submit" value="submit"/>
+}

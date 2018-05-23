@@ -14,7 +14,7 @@ namespace Bank.Areas.BankAccount
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            return View(new AccountModel());
         }
 
         // POST: BankAccount/CreateAccount
@@ -24,7 +24,6 @@ namespace Bank.Areas.BankAccount
             try
             {
                 rep.AddCustomer(account);
-
                 return RedirectToAction("Index");
             }
             catch

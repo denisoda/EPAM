@@ -47,12 +47,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BL">
-      <HintPath>..\BLL\bin\Debug\netstandard2.0\BL.dll</HintPath>
-    </Reference>
-    <Reference Include="DataLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DataLL\bin\Release\DataLL.dll</HintPath>
+    <Reference Include="DataL">
+      <HintPath>..\DataL\bin\Debug\DataL.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -63,9 +59,9 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -182,6 +178,7 @@
     <Content Include="Areas\BankAccount\Views\_ViewStart.cshtml" />
     <Content Include="Areas\BankAccount\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\BankAccount\Views\CreateAccount\View.cshtml" />
+    <Content Include="Areas\BankAccount\Views\CreateAccount\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
