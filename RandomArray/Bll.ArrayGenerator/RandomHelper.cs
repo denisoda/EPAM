@@ -8,7 +8,7 @@ namespace Generator
         /// method helper for acquiring double in a predifined range
         /// </summary>
         /// <param name="minimum">element begins from</param>
-        /// <param name="maximum">element ends fri\om</param>
+        /// <param name="maximum">element ends from</param>
         /// <returns>pseudo random value</returns>
         public static double GetRandomNumber(double minimum, double maximum)
         {

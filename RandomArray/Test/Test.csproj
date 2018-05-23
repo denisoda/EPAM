@@ -16,9 +16,6 @@
     <Reference Include="Generator">
       <HintPath>..\Bll.ArrayGenerator\bin\Debug\netcoreapp2.0\Generator.dll</HintPath>
     </Reference>
-    <Reference Include="RandomArray">
-      <HintPath>..\LIb\bin\Debug\netstandard2.0\RandomArray.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

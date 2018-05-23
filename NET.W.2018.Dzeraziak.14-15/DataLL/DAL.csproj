@@ -73,7 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\AccountModel.cs" />
-    <Compile Include="Classes\BankRepository.cs" />
+    <Compile Include="Repository\BankRepository.cs" />
     <Compile Include="Context\BankContex.cs" />
     <Compile Include="Interfaces\IBankRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

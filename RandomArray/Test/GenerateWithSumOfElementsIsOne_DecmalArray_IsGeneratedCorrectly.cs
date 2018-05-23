@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Generator;
 using NUnit.Framework;
@@ -19,7 +20,7 @@ namespace Test
         [TestCase(50)]
         public void GenerateWithSumOfElementsIsOne(int num)
         {
-            Assert.AreEqual(1, RandomArray.GenerateWithSumOfElementsIsOne(num).Sum());   
+            Assert.IsTrue(Math.Abs(RandomArray.GenerateWithSumOfElementsIsOne(num).Sum() - 1.0) < 1e-8);
         }
     }
 }
